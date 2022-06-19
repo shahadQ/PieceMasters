@@ -19,6 +19,8 @@
 		77B17111284BD65B001F9CBC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 77B17110284BD65B001F9CBC /* FirebaseAuth */; };
 		77B17113284BD65B001F9CBC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 77B17112284BD65B001F9CBC /* FirebaseFirestore */; };
 		77B17115284BD65B001F9CBC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 77B17114284BD65B001F9CBC /* FirebaseStorage */; };
+		88F7765C285F0F6B00C1A5AF /* MainPackaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7765B285F0F6B00C1A5AF /* MainPackaging.swift */; };
+		88F7765F285F1CDE00C1A5AF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7765E285F1CDE00C1A5AF /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		77B170E52847452E001F9CBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77B170E82847452E001F9CBC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		77B1710D284BD07B001F9CBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		88F7765B285F0F6B00C1A5AF /* MainPackaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPackaging.swift; sourceTree = "<group>"; };
+		88F7765E285F1CDE00C1A5AF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +74,9 @@
 				77B170E12847452D001F9CBC /* PieceMastersApp.swift */,
 				77B170E32847452D001F9CBC /* ContentView.swift */,
 				77B170E52847452E001F9CBC /* Assets.xcassets */,
+				88F7765B285F0F6B00C1A5AF /* MainPackaging.swift */,
 				777B928C285B098C008AE921 /* ProductDetails.swift */,
+				88F7765E285F1CDE00C1A5AF /* SearchBar.swift */,
 				77B1710D284BD07B001F9CBC /* GoogleService-Info.plist */,
 				777B9292285B0B19008AE921 /* threeDModel.swift */,
 				777B9290285B0AC2008AE921 /* backgroundRectangle.swift */,
@@ -171,6 +177,8 @@
 				777B9293285B0B19008AE921 /* threeDModel.swift in Sources */,
 				777B928D285B098C008AE921 /* ProductDetails.swift in Sources */,
 				777B9291285B0AC2008AE921 /* backgroundRectangle.swift in Sources */,
+				88F7765C285F0F6B00C1A5AF /* MainPackaging.swift in Sources */,
+				88F7765F285F1CDE00C1A5AF /* SearchBar.swift in Sources */,
 				77B170E22847452D001F9CBC /* PieceMastersApp.swift in Sources */,
 				777B928F285B0A3E008AE921 /* Cart.swift in Sources */,
 			);
