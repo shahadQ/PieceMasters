@@ -21,6 +21,7 @@
 		77B17115284BD65B001F9CBC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 77B17114284BD65B001F9CBC /* FirebaseStorage */; };
 		88F7765C285F0F6B00C1A5AF /* MainPackaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7765B285F0F6B00C1A5AF /* MainPackaging.swift */; };
 		88F7765F285F1CDE00C1A5AF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7765E285F1CDE00C1A5AF /* SearchBar.swift */; };
+		88F7766328605A4C00C1A5AF /* AllProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7766228605A4C00C1A5AF /* AllProducts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		77B1710D284BD07B001F9CBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88F7765B285F0F6B00C1A5AF /* MainPackaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPackaging.swift; sourceTree = "<group>"; };
 		88F7765E285F1CDE00C1A5AF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		88F7766228605A4C00C1A5AF /* AllProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProducts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				88F7765E285F1CDE00C1A5AF /* SearchBar.swift */,
 				77B1710D284BD07B001F9CBC /* GoogleService-Info.plist */,
 				777B9292285B0B19008AE921 /* threeDModel.swift */,
+				88F7766228605A4C00C1A5AF /* AllProducts.swift */,
 				777B9290285B0AC2008AE921 /* backgroundRectangle.swift */,
 				777B928E285B0A3D008AE921 /* Cart.swift */,
 				77B170E72847452E001F9CBC /* Preview Content */,
@@ -176,6 +179,7 @@
 				77B170E42847452D001F9CBC /* ContentView.swift in Sources */,
 				777B9293285B0B19008AE921 /* threeDModel.swift in Sources */,
 				777B928D285B098C008AE921 /* ProductDetails.swift in Sources */,
+				88F7766328605A4C00C1A5AF /* AllProducts.swift in Sources */,
 				777B9291285B0AC2008AE921 /* backgroundRectangle.swift in Sources */,
 				88F7765C285F0F6B00C1A5AF /* MainPackaging.swift in Sources */,
 				88F7765F285F1CDE00C1A5AF /* SearchBar.swift in Sources */,

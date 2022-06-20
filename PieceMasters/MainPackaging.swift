@@ -223,9 +223,9 @@ struct MainPackaging: View {
     }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct MainPackaging_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainPackaging()
     }
 }
 
