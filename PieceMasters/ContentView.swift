@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainPackaging: View {
+struct MainPackaging1: View {
     var body: some View {
         Text("Hello, !")
             .padding()
