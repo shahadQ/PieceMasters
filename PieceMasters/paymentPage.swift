@@ -268,7 +268,8 @@ struct paymentPage: View {
                     
                     if UserPayment == 1
                     {
-                creditcard()  .position(x: 190, y: 670)
+                creditcard()
+                            .position(x: 190, y: 670)
                         
                     }
                     else{
@@ -278,7 +279,7 @@ struct paymentPage: View {
                         }
                         else{
                           
-                            applePay()
+                            _applePay()
                             .position(x: 190, y: 600)
                         
                         }
