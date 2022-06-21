@@ -75,8 +75,8 @@ struct paymentPage: View {
                     }.position(x: 190, y: 250)
                         .padding()
                     
-                    HStack( spacing: -2){
-                        ZStack{
+ HStack( spacing: -2){
+ ZStack{
                             
                             Button(
                                 action: {
@@ -105,7 +105,7 @@ struct paymentPage: View {
                             
                             
                         }
-                        ZStack{
+ ZStack{
                             Button(action: {
                                 self.didTapCreditCard = false
                                 self.didTapApplePay = false
@@ -133,7 +133,7 @@ struct paymentPage: View {
                         }
                         
                         
-                        ZStack{
+ ZStack{
                             Button(action: {
                                 self.didTapCreditCard = false
                                 self.didTapApplePay = true

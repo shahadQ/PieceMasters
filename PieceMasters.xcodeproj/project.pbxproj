@@ -94,6 +94,17 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		1684075128624D570071FC5F /* wafa */ = {
+			isa = PBXGroup;
+			children = (
+				168407432861C8960071FC5F /* paymentPage.swift */,
+				168407492861C9DF0071FC5F /*  applePay.swift */,
+				168407452861C9590071FC5F /* creditcard.swift */,
+				168407472861C99D0071FC5F /* buttonForOtherPayment.swift */,
+			);
+			path = wafa;
+			sourceTree = "<group>";
+		};
 		777B929628613359008AE921 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +140,7 @@
 		77B170E02847452D001F9CBC /* PieceMasters */ = {
 			isa = PBXGroup;
 			children = (
+				1684075128624D570071FC5F /* wafa */,
 				02760D7F2861B6B400E2AF3E /* New Group */,
 				777B929628613359008AE921 /* ViewModels */,
 				77B170E12847452D001F9CBC /* PieceMastersApp.swift */,
@@ -143,10 +155,6 @@
 				777B9290285B0AC2008AE921 /* backgroundRectangle.swift */,
 				777B928E285B0A3D008AE921 /* Cart.swift */,
 				77B170E72847452E001F9CBC /* Preview Content */,
-				168407432861C8960071FC5F /* paymentPage.swift */,
-				168407492861C9DF0071FC5F /*  applePay.swift */,
-				168407452861C9590071FC5F /* creditcard.swift */,
-				168407472861C99D0071FC5F /* buttonForOtherPayment.swift */,
 			);
 			path = PieceMasters;
 			sourceTree = "<group>";
