@@ -21,7 +21,7 @@ struct ProductDetails: View {
     @State private var didTapGloss:Bool = false
     @State private var didTapMatt:Bool = false
     @State private var didTapContinueOrder:Bool = false
-   
+   @ObservedObject private var viewmodel = ViewModel()
     var body: some View {
         
         NavigationView {
@@ -278,6 +278,7 @@ struct ProductDetails: View {
                                 self.didTapSize12.toggle()
                             }, label: {
                                 Text("12 OZ")
+                              //  Text(viewmodel.list.filter(self.))
                                     .font(.system(size: 12))
                                     .fontWeight(self.didTapSize12 ?  .bold : .semibold)
                                    
@@ -377,6 +378,7 @@ struct ProductDetails: View {
                                 self.didTapMatt.toggle()
                             }, label: {
                                 Text("Matt")
+                                
                                     .font(.system(size: 12))
                                     .fontWeight(self.didTapMatt ?  .bold : .semibold)
                                     .padding()
@@ -483,7 +485,9 @@ struct ProductDetails: View {
                     .position(x: 320, y: 210)
                     .shadow(radius: 0.1)
                     
-        }
+            }.onAppear(){
+                viewmodel.getData()
+            }
             .edgesIgnoringSafeArea(.bottom)
     
         
