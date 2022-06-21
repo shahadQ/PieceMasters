@@ -105,7 +105,7 @@ struct creditcard: View {
             }.padding(.trailing, 20)
                 .padding(.top, 10)
             
-            button_for_other_payment()
+            buttonForOtherPayment()
                 .padding()
         
             }
