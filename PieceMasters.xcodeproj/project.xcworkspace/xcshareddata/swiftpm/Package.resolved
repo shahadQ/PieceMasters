@@ -73,6 +73,24 @@
       }
     },
     {
+      "identity" : "igraphics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/benjaminsage/iGraphics.git",
+      "state" : {
+        "revision" : "2b0714f7fe333621365854ebdce44ea2db866405",
+        "version" : "0.0.7"
+      }
+    },
+    {
+      "identity" : "ipaymentbutton",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/benjaminsage/iPaymentButton",
+      "state" : {
+        "branch" : "main",
+        "revision" : "33348c69e980a48e93d1468a010dc4b2c6721b0b"
+      }
+    },
+    {
       "identity" : "leveldb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",

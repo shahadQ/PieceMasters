@@ -13,6 +13,11 @@
 		02760D832861B73500E2AF3E /* MyPatternPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02760D822861B73500E2AF3E /* MyPatternPicker.swift */; };
 		02760D852861B83100E2AF3E /* tab bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02760D842861B83100E2AF3E /* tab bar.swift */; };
 		02760D872861BE0400E2AF3E /* Product1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 02760D862861BE0400E2AF3E /* Product1.scn */; };
+		168407442861C8960071FC5F /* paymentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168407432861C8960071FC5F /* paymentPage.swift */; };
+		168407462861C9590071FC5F /* creditcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168407452861C9590071FC5F /* creditcard.swift */; };
+		168407482861C99D0071FC5F /* buttonForOtherPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168407472861C99D0071FC5F /* buttonForOtherPayment.swift */; };
+		1684074A2861C9DF0071FC5F /*  applePay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168407492861C9DF0071FC5F /*  applePay.swift */; };
+		1684074D2861CA280071FC5F /* iPaymentButton in Frameworks */ = {isa = PBXBuildFile; productRef = 1684074C2861CA280071FC5F /* iPaymentButton */; };
 		777B928D285B098C008AE921 /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777B928C285B098C008AE921 /* ProductDetails.swift */; };
 		777B928F285B0A3E008AE921 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777B928E285B0A3D008AE921 /* Cart.swift */; };
 		777B9291285B0AC2008AE921 /* backgroundRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777B9290285B0AC2008AE921 /* backgroundRectangle.swift */; };
@@ -39,6 +44,10 @@
 		02760D822861B73500E2AF3E /* MyPatternPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPatternPicker.swift; sourceTree = "<group>"; };
 		02760D842861B83100E2AF3E /* tab bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tab bar.swift"; sourceTree = "<group>"; };
 		02760D862861BE0400E2AF3E /* Product1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Product1.scn; sourceTree = "<group>"; };
+		168407432861C8960071FC5F /* paymentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentPage.swift; sourceTree = "<group>"; };
+		168407452861C9590071FC5F /* creditcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = creditcard.swift; sourceTree = "<group>"; };
+		168407472861C99D0071FC5F /* buttonForOtherPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonForOtherPayment.swift; sourceTree = "<group>"; };
+		168407492861C9DF0071FC5F /*  applePay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " applePay.swift"; sourceTree = "<group>"; };
 		777B928C285B098C008AE921 /* ProductDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 		777B928E285B0A3D008AE921 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		777B9290285B0AC2008AE921 /* backgroundRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundRectangle.swift; sourceTree = "<group>"; };
@@ -62,6 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77B17111284BD65B001F9CBC /* FirebaseAuth in Frameworks */,
+				1684074D2861CA280071FC5F /* iPaymentButton in Frameworks */,
 				77B17113284BD65B001F9CBC /* FirebaseFirestore in Frameworks */,
 				77B17115284BD65B001F9CBC /* FirebaseStorage in Frameworks */,
 			);
@@ -133,6 +143,10 @@
 				777B9290285B0AC2008AE921 /* backgroundRectangle.swift */,
 				777B928E285B0A3D008AE921 /* Cart.swift */,
 				77B170E72847452E001F9CBC /* Preview Content */,
+				168407432861C8960071FC5F /* paymentPage.swift */,
+				168407492861C9DF0071FC5F /*  applePay.swift */,
+				168407452861C9590071FC5F /* creditcard.swift */,
+				168407472861C99D0071FC5F /* buttonForOtherPayment.swift */,
 			);
 			path = PieceMasters;
 			sourceTree = "<group>";
@@ -165,6 +179,7 @@
 				77B17110284BD65B001F9CBC /* FirebaseAuth */,
 				77B17112284BD65B001F9CBC /* FirebaseFirestore */,
 				77B17114284BD65B001F9CBC /* FirebaseStorage */,
+				1684074C2861CA280071FC5F /* iPaymentButton */,
 			);
 			productName = PieceMasters;
 			productReference = 77B170DE2847452D001F9CBC /* PieceMasters.app */;
@@ -196,6 +211,7 @@
 			mainGroup = 77B170D52847452D001F9CBC;
 			packageReferences = (
 				77B1710F284BD65B001F9CBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				1684074B2861CA280071FC5F /* XCRemoteSwiftPackageReference "iPaymentButton" */,
 			);
 			productRefGroup = 77B170DF2847452D001F9CBC /* Products */;
 			projectDirPath = "";
@@ -225,6 +241,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168407482861C99D0071FC5F /* buttonForOtherPayment.swift in Sources */,
+				168407442861C8960071FC5F /* paymentPage.swift in Sources */,
 				77B170E42847452D001F9CBC /* ContentView.swift in Sources */,
 				02760D812861B70200E2AF3E /* shap3D.swift in Sources */,
 				777B928D285B098C008AE921 /* ProductDetails.swift in Sources */,
@@ -237,7 +255,9 @@
 				88F7765C285F0F6B00C1A5AF /* MainPackaging.swift in Sources */,
 				88F7765F285F1CDE00C1A5AF /* SearchBar.swift in Sources */,
 				777B92992861373A008AE921 /* Product.swift in Sources */,
+				1684074A2861C9DF0071FC5F /*  applePay.swift in Sources */,
 				02760D782861B21E00E2AF3E /* profile.swift in Sources */,
+				168407462861C9590071FC5F /* creditcard.swift in Sources */,
 				77B170E22847452D001F9CBC /* PieceMastersApp.swift in Sources */,
 				02760D832861B73500E2AF3E /* MyPatternPicker.swift in Sources */,
 				777B928F285B0A3E008AE921 /* Cart.swift in Sources */,
@@ -441,6 +461,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1684074B2861CA280071FC5F /* XCRemoteSwiftPackageReference "iPaymentButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/benjaminsage/iPaymentButton";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		77B1710F284BD65B001F9CBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -452,6 +480,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1684074C2861CA280071FC5F /* iPaymentButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1684074B2861CA280071FC5F /* XCRemoteSwiftPackageReference "iPaymentButton" */;
+			productName = iPaymentButton;
+		};
 		77B17110284BD65B001F9CBC /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 77B1710F284BD65B001F9CBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
