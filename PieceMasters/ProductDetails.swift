@@ -21,7 +21,7 @@ struct ProductDetails: View {
     @State private var didTapGloss:Bool = false
     @State private var didTapMatt:Bool = false
     @State private var didTapContinueOrder:Bool = false
-   
+   @ObservedObject private var viewmodel = ViewModel()
     var body: some View {
         
         NavigationView {
@@ -59,7 +59,7 @@ struct ProductDetails: View {
                     ScrollView{
                     VStack(alignment: .leading){
                             Text("Double wall paper cup")
-                            .font(.system(size: 16))
+                            .font(.system(size: 18))
                               //  .font(.title3)
                                
                             .fontWeight(.semibold)
@@ -68,8 +68,8 @@ struct ProductDetails: View {
                           
                            
                         
-                        Text("Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.\nThe double wall paper cups fit especially well for serving hot beverages. ")
-                            .font(.system(size: 12))
+                        Text("Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ")
+                            .font(.system(size: 14))
                             .fontWeight(.regular)
                             .foregroundColor(Color(hue: 0.0, saturation: 0.031, brightness: 0.391))
                           
@@ -85,7 +85,7 @@ struct ProductDetails: View {
                             .fontWeight(.semibold)
                             .foregroundColor(Color(red: 0.5098039215686274, green: 0.49411764705882355, blue: 0.49411764705882355))
                           
-                        HStack{
+                        HStack(spacing: 15){
                             Button(action: {
                                // self.didTap = true
                                 self.didTapToBuyaProduct.toggle()
@@ -198,7 +198,7 @@ struct ProductDetails: View {
                                 )
                             
                         VStack(alignment: .leading){
-                        HStack(spacing: 10){
+                        HStack(spacing: 15){
                             
                             Button(action: {
                                 self.didTapSize4.toggle()
@@ -278,6 +278,7 @@ struct ProductDetails: View {
                                 self.didTapSize12.toggle()
                             }, label: {
                                 Text("12 OZ")
+                              //  Text(viewmodel.list.filter(self.))
                                     .font(.system(size: 12))
                                     .fontWeight(self.didTapSize12 ?  .bold : .semibold)
                                    
@@ -341,7 +342,7 @@ struct ProductDetails: View {
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color(red: 0.5098039215686274, green: 0.49411764705882355, blue: 0.49411764705882355)
                                 )
-                            HStack(){
+                            HStack(spacing: 15){
                                
                             Button(action: {
                                 self.didTapGloss.toggle()
@@ -377,6 +378,7 @@ struct ProductDetails: View {
                                 self.didTapMatt.toggle()
                             }, label: {
                                 Text("Matt")
+                                
                                     .font(.system(size: 12))
                                     .fontWeight(self.didTapMatt ?  .bold : .semibold)
                                     .padding()
@@ -483,7 +485,9 @@ struct ProductDetails: View {
                     .position(x: 320, y: 210)
                     .shadow(radius: 0.1)
                     
-        }
+            }.onAppear(){
+                viewmodel.getData()
+            }
             .edgesIgnoringSafeArea(.bottom)
     
         
