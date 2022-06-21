@@ -266,7 +266,7 @@ struct paymentPage: View {
                     if UserPayment == 1
                     {
                         creditcard()
-                            .position(x: 190, y: 670)
+                            .position(x: 200, y: 670)
                     }
                     else{
                         if UserPayment == 2
@@ -291,7 +291,7 @@ struct paymentPage: View {
             }
             .padding()
             .navigationTitle("Checkout")}
-        
+      
     }
 }
 
