@@ -13,7 +13,7 @@ struct buttonForOtherPayment: View {
             Text("Complete order ")
                 .foregroundColor(Color.white)
         }
-        .frame(width: 289, height: 50)
+        .frame(width: 350, height: 65)
         .background(Color(red: 0.225, green: 0.26, blue: 0.461))
         .cornerRadius(10)
         
