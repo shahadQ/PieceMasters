@@ -1,51 +1,54 @@
+
 //
-//  backgroundRectangle.swift
-//  ProductDetails
+//  shap.swift
+//  profile
 //
-//  Created by Shahad on 03/11/1443 AH.
+//  Created by EMAN MOHAMMED on 02/06/2022.
 //
 
 import SwiftUI
 
 struct backgroundRectangle: View {
     
-        @State var topleft:CGFloat = 0
-        var body: some View {
-            
-            Rectangle()
-            
-                .fill(Color.white)
-                .frame(width: 390
-                       , height: 700)
-            
-                .cornerRadius(40, corners: [.topLeft, .bottomRight])
-                .padding(.top,300)
+    var body: some View {
+                    Rectangle()
+        
+                        .fill(Color.white)
+                        .frame(width: 390
+                               , height: 800)
+        
+                        .cornerRadius(20, corners: [.topLeft, .bottomRight])
+                        .padding(.top,300)
+        
 
-                .background(Color(red: 0.9686274509803922, green: 0.9686274509803922, blue: 0.9686274509803922))
-            
-                .ignoresSafeArea(.all)
-            
-        }
-            
+                        .background(Color(red: 0.9725490196078431, green: 0.9725490196078431, blue: 0.9725490196078431))
+        
+        
+                        .ignoresSafeArea(.all)
+                        .shadow(radius: 0.1)
     }
-    extension View {
-        func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-            
-            clipShape( RoundedCorner(radius: radius, corners: corners) )
-        }
+}
+
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape( RoundedCorner(radius: radius, corners: corners) )
     }
-    struct RoundedCorner: Shape {
+}
+struct RoundedCorner: Shape {
 
-        var radius: CGFloat = .infinity
-        var corners: UIRectCorner = .allCorners
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
 
-        func path(in rect: CGRect) -> Path {
-            let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-            return Path(path.cgPath)
-        }
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
     }
+}
 
-struct backgroundRectangle_Previews: PreviewProvider {
+
+
+
+struct shap_Previews: PreviewProvider {
     static var previews: some View {
         backgroundRectangle()
     }
