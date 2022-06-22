@@ -270,11 +270,11 @@ struct paymentPage: View {
                     }
                     else{
                         if UserPayment == 2
-                        { buttonForOtherPayment()
+                        { buttonForOtherPayment()    .position(x: 190, y: 800)
                         }
                         else{
                             _applePay()
-                                .position(x: 190, y: 600)
+                                .position(x: 190, y: 800)
                             
                         }
                         
