@@ -84,8 +84,10 @@ struct ProductView: View {
                 
                 ScrollView(.vertical, showsIndicators: false){
                     LazyVGrid(columns: columns, spacing:40){
-                        ForEach(categoryIndexzx == 0 ? ProductData : ProductData.filter({ categories[categoryIndexzx].contains($0.title) })){ product in
-                            
+                        ForEach(categoryIndexzx == 0 ? ProductData : ProductData.filter({ categories[categoryIndexzx].contains($0.title) }))
+                        
+                        { product in
+//                            NavigationLink(destination: boxProductDetails(Product: product)){
                             ZStack{
                                 
                                 
@@ -164,11 +166,11 @@ struct ProductView: View {
                                     Image(product.offer != nil ? "offer" : "")
                                         .padding()
                                         .position(x: 30, y: 30)
-                                    
-                                    
                                 }
+                                }
+//                                }
                               
-                            }
+                            
                             
                             .background(Color(product.cardColor))
                             .clipShape(RoundedRectangle(cornerRadius: 15))

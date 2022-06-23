@@ -9,13 +9,14 @@ import SwiftUI
 
 struct MainPackaging1: View {
     var body: some View {
-        Text("Hello, !")
-            .padding()
+
+        AllProducts()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainPackaging()
+       // MainPackaging()
+        AllProducts()
     }
 }

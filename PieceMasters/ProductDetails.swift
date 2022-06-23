@@ -10,6 +10,11 @@ import Firebase
 
 
 struct ProductDetails: View {
+    
+    
+    
+    
+    
     //private var numberOfimages = 2
    @State var names = 0
     @State var TextFieldQuantities: String = ""
