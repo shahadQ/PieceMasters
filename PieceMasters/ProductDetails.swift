@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+
 
 struct ProductDetails: View {
     //private var numberOfimages = 2
@@ -21,7 +23,7 @@ struct ProductDetails: View {
     @State private var didTapGloss:Bool = false
     @State private var didTapMatt:Bool = false
     @State private var didTapContinueOrder:Bool = false
-   @ObservedObject private var viewmodel = ViewModel()
+   @ObservedObject private var Productviewmodel = ViewModel()
     var body: some View {
         
         NavigationView {
@@ -58,14 +60,16 @@ struct ProductDetails: View {
                    // Spacer()
                     ScrollView{
                     VStack(alignment: .leading){
-                            Text("Double wall paper cup")
+                        ForEach(Productviewmodel.list){ pro in
+                            
+                            Text(pro.name)
                             .font(.system(size: 18))
                               //  .font(.title3)
                                
                             .fontWeight(.semibold)
                             .padding([.top, .bottom, .trailing])
                             //Spacer()
-                          
+                        }
                            
                         
                         Text("Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ")
@@ -485,9 +489,9 @@ struct ProductDetails: View {
                     .position(x: 320, y: 210)
                     .shadow(radius: 0.1)
                     
-            }.onAppear(){
-                viewmodel.getData()
-            }
+            }//.onAppear(){
+             //   Productviewmodel.getData()
+           // }
             .edgesIgnoringSafeArea(.bottom)
     
         
@@ -497,7 +501,12 @@ struct ProductDetails: View {
         
         
     }
+        
+        
     }//END body
+    init(){
+        Productviewmodel.getData()
+    }
 }//END ContentView
 
 

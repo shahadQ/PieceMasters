@@ -29,12 +29,12 @@ class ViewModel: ObservableObject{
                             return product(id: d.documentID,
                                            name: d["name"] as? String ?? "",
                                            Description: d["Description"] as? String ?? "",
-                                           size: d["size"] as? String ?? "",
-                                           Cardboard: d["Cardboard"] as? String ?? "",
+                                           size: d["size"] as? Array<String> ?? [],
+                                           Cardboard: d["Cardboard"] as? Array<String> ?? [],
                                            image: d["image"] as? String ?? "",
                                            Category: d["Category"] as? String ?? "",
                                            price: d["price"] as? Double ?? 0,
-                                           is_Customizable: d["is_Customizable"] as? String ?? "")
+                                           is_Customizable: d["is_Customizable"] as? Array<String> ?? [])
                         }
                         
                     }
