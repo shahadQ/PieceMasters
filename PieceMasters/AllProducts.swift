@@ -87,7 +87,7 @@ struct ProductView: View {
                         ForEach(categoryIndexzx == 0 ? ProductData : ProductData.filter({ categories[categoryIndexzx].contains($0.title) }))
                         
                         { product in
-//                            NavigationLink(destination: boxProductDetails(Product: product)){
+                            NavigationLink(destination: boxProductDetails(Product: product)){
                             ZStack{
                                 
                                 
@@ -168,7 +168,7 @@ struct ProductView: View {
                                         .position(x: 30, y: 30)
                                 }
                                 }
-//                                }
+                                }
                               
                             
                             

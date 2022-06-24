@@ -12,6 +12,7 @@ var Product:Product
     var body: some View {
         VStack{
             Text(Product.title)
+            Image(Product.image)
         }
     }
 }

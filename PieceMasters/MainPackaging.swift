@@ -37,15 +37,24 @@ struct MainPackaging: View {
     var body: some View {
         
         NavigationView{
-            
+           
             ZStack{
+              
+
                 Color("iColor")
                     .ignoresSafeArea()
             VStack{
-               
-                SearchBar(text: $text)
-                    .padding(.top, 30)
                 
+                Text("packaging and boxes").font(.system(size: 23).bold())
+                    .padding(.top ,-50)
+                    .foregroundColor(Color(red: 0.22, green: 0.26, blue: 0.478))
+                    
+              .padding(.leading ,-125)
+
+                SearchBar(text: $text)
+                    .frame(width: 350, height: 38 )
+                    .padding(.bottom ,-15)
+             
                 Group{
                     TabView {
                         ZStack{
@@ -58,6 +67,7 @@ struct MainPackaging: View {
                                     .font(.title)
                                     .bold()
                                 Text("First order")
+
                                 Button("Book") {
                                                 
                                             }
@@ -99,7 +109,7 @@ struct MainPackaging: View {
                     .accentColor(Color.pink)
                               .tabViewStyle(.page)
 
-                }
+                }.padding(.top ,-5)
 
                 Group{
                 VStack(alignment:.leading){
@@ -107,6 +117,7 @@ struct MainPackaging: View {
                         .font(.body)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.leading)
+                        .padding(.top ,-30)
                         .foregroundColor(Color(red: 0.22, green: 0.26, blue: 0.478))
                         
                         .padding(.trailing, 239.0)
@@ -122,7 +133,7 @@ struct MainPackaging: View {
                     .font(.subheadline)
                     .foregroundColor(Color(red: 0.22, green: 0.26, blue: 0.478))
                     
-                    ScrollView(.horizontal) {
+                    ScrollView(.horizontal ,showsIndicators: false) {
                         HStack(spacing: 20) {
                             ForEach(self.text.isEmpty ? IData : []) {iidata in
                                 VStack{
@@ -211,10 +222,9 @@ struct MainPackaging: View {
                     .padding(.horizontal)
                     }
                 }
-               
                 }
               
-            .navigationTitle("packaging and boxes")
+//            .navigationTitle("packaging and boxes")
             .navigationBarTitleDisplayMode(.automatic)
                 
                

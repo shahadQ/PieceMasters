@@ -10,7 +10,7 @@ import Firebase
 
 
 struct ProductDetails: View {
-    
+
     
     
     
