@@ -16,13 +16,13 @@ struct MyPatternPicker: View {
     @Binding var selectedPicker: String
 
     let imageModel3: [ImageModel3] = [
-    .init(id: 0, imageName: "coffee1"),
-    .init(id: 1, imageName: "coffee2"),
-    .init(id: 2, imageName: "coffee3"),
-    .init(id: 3, imageName: "coffee4"),
-    .init(id: 4, imageName: "coffee5"),
-    .init(id: 5, imageName: "coffee6"),
-    .init(id: 6, imageName: "coffee7")
+        .init(id: 0, imageName: "coffee8"),
+       .init(id: 1, imageName: "coffee1"),
+       .init(id: 2, imageName: "coffee2"),
+       .init(id: 3, imageName: "coffee4"),
+       .init(id: 4, imageName: "coffee5"),
+       .init(id: 5, imageName: "coffee6"),
+       .init(id: 6, imageName: "coffee11")
     ]
 
     
