@@ -27,14 +27,20 @@ class ViewModel: ObservableObject{
                         self.list = snapshot.documents.map { d in
                             
                             return product(id: d.documentID,
-                                           name: d["name"] as? String ?? "",
+                                           title: d["name"] as? String ?? "",
                                            Description: d["Description"] as? String ?? "",
                                            size: d["size"] as? Array<String> ?? [],
                                            Cardboard: d["Cardboard"] as? Array<String> ?? [],
+                                        is_Customizable: d["is_Customizable"] as? Array<String> ?? [],
                                            image: d["image"] as? String ?? "",
-                                           Category: d["Category"] as? String ?? "",
-                                           price: d["price"] as? Double ?? 0,
-                                           is_Customizable: d["is_Customizable"] as? Array<String> ?? [])
+                                           amount: d["amount"] as? String ?? "",
+                                           cardColor: d["cardColor"] as? String ?? "",
+                                           price: d["price"] as? String ?? "",
+                                           offer: d["offer"] as? Int ?? 0,
+                                           isSelected: d["isSelected"] as? Bool ?? false
+                                        )
+                         
+                    
                         }
                         
                     }

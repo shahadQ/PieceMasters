@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct boxProductDetails: View {
-var Product:Product
+//var Product:Product
     var body: some View {
         VStack{
-            Text(Product.title)
-            Image(Product.image)
+         //   Text(Product.title)
+          //  Image(Product.image)
+            Text("box")
         }
     }
 }

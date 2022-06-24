@@ -29,10 +29,10 @@ struct AllProducts_Previews: PreviewProvider {
 struct ProductView: View {
     
     @State var ProductData = [
-        Product(title: "Cup", image: "Cup1", amount: "Double wall paper cup", cardColor: "iColor1", price: "100 RS", offer: 15, isSelected: true),
-        Product(title: "Ice cream Cup", image: "Cup2", amount: "The ice cream cups", cardColor: "iColor1", price: "150 RS",isSelected: false),
-        Product(title: "Box", image: "box", amount: "Double wall paper cup", cardColor: "iColor1", price: "210 RS", isSelected: false),
-        Product(title: "Bags", image: "bag", amount: "Double wall paper cup", cardColor: "iColor1", price: "100 RS", isSelected: false),
+        product(id: "11", title: "Cup",Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "Double wall paper cup", cardColor: "iColor1", price: "100 RS", offer: 15, isSelected: true),
+        product(id: "22", title: "Ice cream Cup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ",image: "Cup2", amount: "The ice cream cups", cardColor: "iColor1", price: "150 RS",isSelected: false),
+        product(id: "33", title: "Box", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ",image: "box", amount: "Double wall paper cup", cardColor: "iColor1", price: "210 RS", isSelected: false),
+        product(id: "44", title: "Bags",Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "bag", amount: "Double wall paper cup", cardColor: "iColor1", price: "100 RS", isSelected: false),
         
     ]
     
@@ -41,7 +41,7 @@ struct ProductView: View {
 
     @State var categoryIndexzx = 0
     @State var text = ""
-    @State var filterData : [Product] = []
+    @State var filterData : [product] = []
     
     var body: some View {
       
@@ -87,7 +87,7 @@ struct ProductView: View {
                         ForEach(categoryIndexzx == 0 ? ProductData : ProductData.filter({ categories[categoryIndexzx].contains($0.title) }))
                         
                         { product in
-                            NavigationLink(destination: boxProductDetails(Product: product)){
+                            NavigationLink(destination: ProductDetails(Product: product)){
                             ZStack{
                                 
                                 
@@ -196,10 +196,10 @@ struct ProductView: View {
 }
 
 struct Categories: View {
-    @Binding var ProductData : [Product]
+    @Binding var ProductData : [product]
     var data: Int
     @Binding var index: Int
-    @Binding var filterData : [Product]
+    @Binding var filterData : [product]
     var categories = ["All", "Cups", "Boxes", "Bags"]
     
     @State var isfilterArray = false
@@ -265,14 +265,3 @@ struct Categories: View {
     }
 }
 
-
-struct Product: Identifiable {
-    var id = UUID()
-    var title: String
-    var image: String
-    var amount: String
-    var cardColor: String
-    var price: String
-    var offer : Int?
-    var isSelected: Bool
-}
