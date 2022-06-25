@@ -12,6 +12,8 @@ struct profile: View {
     
     
     var SecondaryColor: Color = (Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
+    @StateObject var prifileViewModel = ProfileViewModel()
+    @EnvironmentObject var authViewModel : AuthViewModel
 
     var body: some View {
 
@@ -28,17 +30,30 @@ struct profile: View {
                 
      // header           --------------------------------------------------------------
             VStack{
-                Text("Hello ,  Ali")
-                
-                    .font(.title2).bold()
-                    .padding(.bottom, 700.0)
-                    .offset(x: 10, y: 15)
-                    .font(.largeTitle)
-                    .foregroundColor(PrimaryColor)
-                    .frame(width: 380, alignment: .bottomLeading)
+                HStack{
+                Text("Hello , ")
+                        .font(.title2).bold()
+                        .font(.largeTitle)
+                        .foregroundColor(PrimaryColor)
+                //.padding(.bottom, 700.0)
+                TextField("First Name", text: $prifileViewModel.firstName)
+                        .offset(x: 0, y: 0)
+                        .foregroundColor(PrimaryColor)
+                    TextField("Last Name", text: $prifileViewModel.lastName)
+                        .offset(x: -80, y: 0)
+                        .foregroundColor(PrimaryColor)
+//                    .font(.title2).bold()
+//                    .padding(.bottom, 700.0)
+   
+//                    .font(.largeTitle)
+//                    .foregroundColor(PrimaryColor)
+//                    .frame(width: 380, alignment: .bottomLeading)
 
-              
+                }
+                .offset(x: 50, y: -350)
+             
             }
+            
             
  
             

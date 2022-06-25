@@ -9,13 +9,24 @@ import SwiftUI
 import Firebase
 @main
 struct PieceMastersApp: App {
+    @StateObject var registrationViewModel = RegistrationViewModel()
+    
     init(){
         FirebaseApp.configure()
     }
     var body: some Scene {
+        
         WindowGroup {
 //            MainPackaging()
-            tab_bar()
+            tab_bar()}
+        
+            WindowGroup {
+            signIN()
+                .environmentObject(registrationViewModel)
+            .environmentObject(AuthViewModel.shared)
+            
+          
         }
+        
     }
 }
