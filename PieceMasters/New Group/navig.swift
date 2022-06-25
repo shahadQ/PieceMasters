@@ -15,7 +15,7 @@ struct navig: View {
     var body: some View {
         
         
-        
+    
         
         
         
@@ -34,7 +34,7 @@ struct navig: View {
             Button(action: {
                 // Actions
             }, label: {Image(systemName: "chevron.backward").foregroundColor(PrimaryColor).font(Font.body.bold())})
-            
+
             Button(action: {}, label: {Text("Back").foregroundColor(PrimaryColor).position(x: 8, y: 12)})
         },
                             
@@ -43,6 +43,7 @@ struct navig: View {
                     { showAlert = true}
                    // Actions
                    , label: {Image(systemName: "info.circle.fill")})
+            
             .foregroundColor(.gray)
             .alert(isPresented: $showAlert) {
                 Alert(
@@ -52,6 +53,10 @@ struct navig: View {
             }
             
         })
+        
+       
+         
+       
     }
     
     

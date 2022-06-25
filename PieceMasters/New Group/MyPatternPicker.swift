@@ -1,3 +1,4 @@
+
 //
 //  MyPatternPicker.swift
 //  profile1
@@ -16,13 +17,15 @@ struct MyPatternPicker: View {
     @Binding var selectedPicker: String
 
     let imageModel3: [ImageModel3] = [
-        .init(id: 0, imageName: "coffee8"),
-       .init(id: 1, imageName: "coffee1"),
-       .init(id: 2, imageName: "coffee2"),
-       .init(id: 3, imageName: "coffee4"),
-       .init(id: 4, imageName: "coffee5"),
-       .init(id: 5, imageName: "coffee6"),
-       .init(id: 6, imageName: "coffee11")
+     .init(id: 0, imageName: "coffee8"),
+    .init(id: 1, imageName: "coffee1"),
+    .init(id: 2, imageName: "coffee2"),
+    .init(id: 3, imageName: "coffee3"),
+    .init(id: 4, imageName: "coffee4"),
+    .init(id: 5, imageName: "coffee5"),
+    .init(id: 6, imageName: "coffee6"),
+    .init(id: 7, imageName: "coffee11")
+
     ]
 
     
@@ -34,7 +37,7 @@ struct MyPatternPicker: View {
                 ForEach(imageModel3, id: \.id) { image in
                     Image(image.imageName)
                     .resizable()
-  
+
                     .frame(width: 70, height: 70)
                     
                     .clipShape(Circle())

@@ -108,7 +108,7 @@ struct threeDModel: View {
                         
                         
                         
-                        .padding(.bottom ,200)
+                        .padding(.bottom ,350)
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1, alignment: .center)
                         
                         //logo
@@ -159,7 +159,7 @@ struct threeDModel: View {
                                 
                             }
                             .position(x: 340, y: 510)
-                            .padding(.top ,-200)
+                            .padding(.top ,-180)
                             
                             
                             
@@ -303,11 +303,12 @@ struct threeDModel: View {
                             
                         }
                         
-                        .position(x: 190, y: 530)
+                        .position(x: 190, y: 430)
                         
                         
                         
                         navig()
+                          
                         Button(action: {
                             presentImporter = true
                         }) {
@@ -335,7 +336,7 @@ struct threeDModel: View {
                                 print(error)
                             }
                         }
-                        .position(x: 100, y: 700)
+                        .position(x: 100, y: 590)
                         
                         
                         
@@ -346,14 +347,11 @@ struct threeDModel: View {
                                 .disabled(disabled)
                                 .padding(10.0)
                                 .disabled(false)
-                            
-                            //                                .frame(width: 320, height: 55)
                                 .frame(width: 160, height: 55)
                                 .background(BACGR1)
                                 .cornerRadius(10)
                                 .foregroundColor(.gray)
-                            //                                .position(x: 190, y: 690)
-                                .position(x: 287, y: 700)
+                                .position(x: 287, y: 590)
                         }
                         
                         else{
@@ -363,15 +361,12 @@ struct threeDModel: View {
                             })
                             
                             .disabled(false)
-                            
-                            //                            .frame(width: 320, height: 55)
                             .frame(width: 160, height: 55)
                             .background(PrimaryColor)
                             .cornerRadius(10)
                             .foregroundColor(.white)
                             .font(Font.body.bold())
-                            //                            .position(x: 190, y: 690)
-                            .position(x: 287, y: 700)
+                            .position(x: 287, y: 590)
                             
                             
                             
