@@ -86,9 +86,10 @@ struct ProductView: View {
                 ScrollView(.vertical, showsIndicators: false){
                     LazyVGrid(columns: columns, spacing:40){
                         ForEach(categoryIndexzx == 0 ? Productviewmodel.list : Productviewmodel.list.filter({ p in
+                            categories[categoryIndexzx].contains(p.title)
                             
                         
-                           p.offer ?? 0 >= 0
+                  //      p.offer ?? 0 >= 0
                         }))
                         
                         { product in

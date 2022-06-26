@@ -27,7 +27,7 @@ class ViewModel: ObservableObject{
                         self.list = snapshot.documents.map { d in
                             
                             return product(id: d.documentID,
-                                           title: d["name"] as? String ?? "",
+                                           title: d["title"] as? String ?? "",
                                            Description: d["Description"] as? String ?? "",
                                            size: d["size"] as? Array<String> ?? [],
                                            Cardboard: d["Cardboard"] as? Array<String> ?? [],
