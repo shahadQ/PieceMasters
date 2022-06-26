@@ -25,6 +25,7 @@
 		777B92992861373A008AE921 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777B92982861373A008AE921 /* Product.swift */; };
 		777B929B28613B9E008AE921 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777B929A28613B9E008AE921 /* ViewModel.swift */; };
 		777B929D28646FB6008AE921 /* boxProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777B929C28646FB6008AE921 /* boxProductDetails.swift */; };
+		777B92A02868F7F2008AE921 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 777B929F2868F7F2008AE921 /* Kingfisher */; };
 		77B170E22847452D001F9CBC /* PieceMastersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B170E12847452D001F9CBC /* PieceMastersApp.swift */; };
 		77B170E42847452D001F9CBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B170E32847452D001F9CBC /* ContentView.swift */; };
 		77B170E62847452E001F9CBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B170E52847452E001F9CBC /* Assets.xcassets */; };
@@ -92,6 +93,7 @@
 				1684074D2861CA280071FC5F /* iPaymentButton in Frameworks */,
 				77B17113284BD65B001F9CBC /* FirebaseFirestore in Frameworks */,
 				77B17115284BD65B001F9CBC /* FirebaseStorage in Frameworks */,
+				777B92A02868F7F2008AE921 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +233,7 @@
 				77B17112284BD65B001F9CBC /* FirebaseFirestore */,
 				77B17114284BD65B001F9CBC /* FirebaseStorage */,
 				1684074C2861CA280071FC5F /* iPaymentButton */,
+				777B929F2868F7F2008AE921 /* Kingfisher */,
 			);
 			productName = PieceMasters;
 			productReference = 77B170DE2847452D001F9CBC /* PieceMasters.app */;
@@ -263,6 +266,7 @@
 			packageReferences = (
 				77B1710F284BD65B001F9CBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				1684074B2861CA280071FC5F /* XCRemoteSwiftPackageReference "iPaymentButton" */,
+				777B929E2868F7F2008AE921 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 77B170DF2847452D001F9CBC /* Products */;
 			projectDirPath = "";
@@ -531,6 +535,14 @@
 				kind = branch;
 			};
 		};
+		777B929E2868F7F2008AE921 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		77B1710F284BD65B001F9CBC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -546,6 +558,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1684074B2861CA280071FC5F /* XCRemoteSwiftPackageReference "iPaymentButton" */;
 			productName = iPaymentButton;
+		};
+		777B929F2868F7F2008AE921 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 777B929E2868F7F2008AE921 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		77B17110284BD65B001F9CBC /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
