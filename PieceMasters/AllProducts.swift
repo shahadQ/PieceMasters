@@ -12,6 +12,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct AllProducts: View {
     var body: some View {
@@ -29,16 +30,16 @@ struct AllProducts_Previews: PreviewProvider {
 struct ProductView: View {
     
     @State var ProductData = [
-        product(id: "11", title: "Cup",Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "Double wall paper cup", cardColor: "iColor1", price: "100 RS", offer: 15, isSelected: true),
-        product(id: "22", title: "Ice cream Cup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ",image: "Cup2", amount: "The ice cream cups", cardColor: "iColor1", price: "150 RS",isSelected: false),
-        product(id: "33", title: "Box", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ",image: "box", amount: "Double wall paper cup", cardColor: "iColor1", price: "210 RS", isSelected: false),
-        product(id: "44", title: "Bags",Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "bag", amount: "Double wall paper cup", cardColor: "iColor1", price: "100 RS", isSelected: false),
+        product(id: "11", title: "Cup",Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "Double wall paper cup", price: "100", offer: 15, isSelected: true),
+        product(id: "22", title: "Ice cream Cup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ",image: "Cup2", amount: "The ice cream cups", price: "150",isSelected: false),
+        product(id: "33", title: "Box", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ",image: "box", amount: "Double wall paper cup",  price: "210", isSelected: false),
+        product(id: "44", title: "Bags",Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "bag", amount: "Double wall paper cup", price: "100", isSelected: false),
         
     ]
     
     var columns = Array(repeating: GridItem(.flexible()), count: 2)
     var categories = ["All", "Cups", "Boxes", "Bags"]
-
+    @ObservedObject private var Productviewmodel = ViewModel()
     @State var categoryIndexzx = 0
     @State var text = ""
     @State var filterData : [product] = []
@@ -84,7 +85,11 @@ struct ProductView: View {
                 
                 ScrollView(.vertical, showsIndicators: false){
                     LazyVGrid(columns: columns, spacing:40){
-                        ForEach(categoryIndexzx == 0 ? ProductData : ProductData.filter({ categories[categoryIndexzx].contains($0.title) }))
+                        ForEach(categoryIndexzx == 0 ? Productviewmodel.list : Productviewmodel.list.filter({ p in
+                            
+                        
+                           p.offer ?? 0 >= 0
+                        }))
                         
                         { product in
                             NavigationLink(destination: ProductDetails(Product: product)){
@@ -136,7 +141,7 @@ struct ProductView: View {
                                                             .fontWeight(.light)
                                                         
                                                         Spacer()
-                                                        Text(product.price)
+                                                        Text("\(product.price) RS")
                                                             .font(.caption)
                                                             .foregroundColor(Color("mainfont"))
                                                             .fontWeight(.semibold)
@@ -172,9 +177,9 @@ struct ProductView: View {
                               
                             
                             
-                            .background(Color(product.cardColor))
+                            .background(Color("iColor1"))
                             .clipShape(RoundedRectangle(cornerRadius: 15))
-                            .shadow(color: Color(product.cardColor).opacity(1.5), radius: 5, x:0, y: 5)
+                            .shadow(color: Color("iColor1").opacity(1.5), radius: 5, x:0, y: 5)
 
                             .frame(width: 150, height: 290)
 
@@ -193,9 +198,13 @@ struct ProductView: View {
         
         
     }
+    init(){
+         Productviewmodel.getData()
+    }
 }
 
 struct Categories: View {
+    @ObservedObject private var Productviewmodel = ViewModel()
     @Binding var ProductData : [product]
     var data: Int
     @Binding var index: Int
@@ -212,17 +221,23 @@ struct Categories: View {
             case 1 :
                 isfilterArray = true
                 
-                filterData = ProductData.filter {$0.title == "Cup"}
+                filterData = Productviewmodel.list.filter {p in
+                    p.title == "Cup"}
+                print(filterData)
                 break
             case 2 :
                 isfilterArray = true
                 
-                filterData = ProductData.filter {$0.title == "Box"}
+                filterData = Productviewmodel.list.filter {p in
+                    p.title == "Box"}
+                print(filterData)
                 break
             case 3:
                 isfilterArray = true
                 
-                filterData = ProductData.filter {$0.title == "Bags"}
+                filterData = Productviewmodel.list.filter {p in
+                    p.title == "Bags"}
+                print(filterData)
                 break
                 
             default:
@@ -264,4 +279,3 @@ struct Categories: View {
         
     }
 }
-

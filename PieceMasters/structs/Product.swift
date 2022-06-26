@@ -30,7 +30,7 @@ struct product: Identifiable {
     var is_Customizable: [String]? = nil
     var image: String
     var amount: String
-    var cardColor: String
+
     var price: String
     var offer : Int?
     var isSelected: Bool

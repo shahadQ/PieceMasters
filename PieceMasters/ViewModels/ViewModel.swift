@@ -34,7 +34,7 @@ class ViewModel: ObservableObject{
                                         is_Customizable: d["is_Customizable"] as? Array<String> ?? [],
                                            image: d["image"] as? String ?? "",
                                            amount: d["amount"] as? String ?? "",
-                                           cardColor: d["cardColor"] as? String ?? "",
+                                         
                                            price: d["price"] as? String ?? "",
                                            offer: d["offer"] as? Int ?? 0,
                                            isSelected: d["isSelected"] as? Bool ?? false

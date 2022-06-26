@@ -20,13 +20,13 @@ struct PieceMastersApp: App {
 //            MainPackaging()
             tab_bar()}
         
-            WindowGroup {
-            signIN()
-                .environmentObject(registrationViewModel)
-            .environmentObject(AuthViewModel.shared)
-            
-          
-        }
+//            WindowGroup {
+//            signIN()
+//                .environmentObject(registrationViewModel)
+//            .environmentObject(AuthViewModel.shared)
+//
+//
+//        }
         
     }
 }
