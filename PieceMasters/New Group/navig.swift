@@ -31,11 +31,11 @@ struct navig: View {
         .navigationBarItems(leading:
                                 
                                 HStack {
-            Button(action: {
-                // Actions
-            }, label: {Image(systemName: "chevron.backward").foregroundColor(PrimaryColor).font(Font.body.bold())})
-
-            Button(action: {}, label: {Text("Back").foregroundColor(PrimaryColor).position(x: 8, y: 12)})
+//            Button(action: {
+//                // Actions
+//            }, label: {Image(systemName: "chevron.backward").foregroundColor(PrimaryColor).font(Font.body.bold())})
+//
+//            Button(action: {}, label: {Text("Back").foregroundColor(PrimaryColor).position(x: 8, y: 12)})
         },
                             
                             trailing: VStack {
@@ -52,7 +52,7 @@ struct navig: View {
                 )
             }
             
-        })
+        }).position(x: 8, y: 100)
         
        
          

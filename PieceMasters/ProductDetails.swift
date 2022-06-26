@@ -15,7 +15,7 @@ struct ProductDetails: View {
     
     
     var Product:product
-
+    @State private var showAlert = false
     //private var numberOfimages = 2
    @State var names = 0
     @State var TextFieldQuantities: String = ""
@@ -56,7 +56,6 @@ struct ProductDetails: View {
 //                            .frame(width: proxy.size.width, height: proxy.size.height  )
 //
 //                        }
-                    
                     Image(Product.image)
                         .resizable()
                                    .scaledToFit()
@@ -67,7 +66,7 @@ struct ProductDetails: View {
                    // Spacer()
                     ScrollView{
                     VStack(alignment: .leading){
-                  //     ForEach(Productviewmodel.list){ pro in
+                   //     ForEach(Productviewmodel.list){ pro in
                             
                         //    Text(pro.name)
                         Text(Product.amount)
@@ -78,7 +77,7 @@ struct ProductDetails: View {
                             .fontWeight(.semibold)
                             .padding([.top, .bottom, .trailing])
                             //Spacer()
-                   //     }
+                        //}
                            
                         
 //                        Text("Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ")
@@ -448,7 +447,7 @@ struct ProductDetails: View {
                         Text("Total Price :")
                             .foregroundColor(Color(red: 0.5098039215686274, green: 0.49411764705882355, blue: 0.49411764705882355))
                          
-                        Text("\(Product.price) RS")
+                        Text(Product.price)
                             .font(.title)
                             .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
                     }
@@ -460,8 +459,29 @@ struct ProductDetails: View {
                          
                         }
                         else if self.didTapDesignPruduct == true{
+                            
                          threeDModel()
-                        
+                            Text("")
+                                .navigationBarTitle("")
+                                .navigationBarTitleDisplayMode(.large)
+                                .navigationBarItems(
+                                    trailing:
+                                        Button(action:
+                                                { showAlert = true}
+                                               // Actions
+                                               , label: {Image(systemName: "info.circle.fill")})
+                                        
+                                        .foregroundColor(.gray)
+                                        .alert(isPresented: $showAlert) {
+                                            Alert(
+                                                title: Text("TIPS"),
+                                                message: Text("\n"+"Only for preview display" + "Product Color May Slightly Vary when printing.")
+                                            )
+                                        }                                )
+                            
+                            
+             
+                      
                         }
                     }) {
                         Text("Continue Order")
@@ -481,7 +501,7 @@ struct ProductDetails: View {
                 .background(Color(red: 0.9686274509803922, green: 0.9686274509803922, blue: 0.9686274509803922))
                 .cornerRadius(40,corners: .topLeft)
                 .frame( maxHeight: 550, alignment: .bottom)
-                //.frame( maxHeight: .infinity, alignment: .bottom)
+               
              
                 
                 Button(action: {
@@ -502,9 +522,9 @@ struct ProductDetails: View {
                     .position(x: 320, y: 210)
                     .shadow(radius: 0.1)
                     
-            }.onAppear(){
-               Productviewmodel.getData()
-           }
+            }//.onAppear(){
+             //   Productviewmodel.getData()
+           // }
             .edgesIgnoringSafeArea(.bottom)
     
         
@@ -517,15 +537,16 @@ struct ProductDetails: View {
         
         
     }//END body
-//   init(){
-//       Productviewmodel.getData()
-//    }
+   // init(){
+   //     Productviewmodel.getData()
+   // }
 }//END ContentView
 
 
 
 struct ProductDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetails(Product: product( id: "11", title: "cuup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "PAPER CUP", price: "90", offer: 1, isSelected: false))
+        ProductDetails(Product: product( id: "11", title: "cuup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "PAPER CUP",  price: "90", offer: 1, isSelected: false))
     }
 }
+

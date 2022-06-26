@@ -46,6 +46,8 @@ struct threeDModel: View {
         
         NavigationView {
             
+            
+            
             ZStack{
                 
                 ZStack{
@@ -159,7 +161,7 @@ struct threeDModel: View {
                                 
                             }
                             .position(x: 340, y: 510)
-                            .padding(.top ,-180)
+                            .padding(.top ,-200)
                             
                             
                             
@@ -307,8 +309,8 @@ struct threeDModel: View {
                         
                         
                         
-                        navig()
-                          
+//                        navig()
+
                         Button(action: {
                             presentImporter = true
                         }) {
@@ -410,7 +412,7 @@ struct threeDModel: View {
                 
                 
             }.background(BACGR)
-            
+
             
             
         }
