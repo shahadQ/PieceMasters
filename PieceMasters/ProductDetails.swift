@@ -220,7 +220,7 @@ struct ProductDetails: View {
                             Button(action: {
                                 self.didTapSize4.toggle()
                             }, label: {
-                                Text("4 OZ")
+                                Text((Product.size?[0])!)
                                     .font(.system(size: 12))
                                     .fontWeight(self.didTapSize4 ?  .bold : .semibold)
                                   //  .foregroundColor(Color(red: 0.5098039215686274, green: 0.49411764705882355, blue: 0.49411764705882355))
@@ -257,7 +257,7 @@ struct ProductDetails: View {
                             Button(action: {
                                 self.didTapSize8.toggle()
                             }, label: {
-                                Text("8 OZ")
+                                Text((Product.size?[1])!)
                                     .font(.system(size: 12))
                                     .fontWeight(self.didTapSize8 ?  .bold : .semibold)
                                    // .font(.system(size: 16))
@@ -294,7 +294,7 @@ struct ProductDetails: View {
                             Button(action: {
                                 self.didTapSize12.toggle()
                             }, label: {
-                                Text("12 OZ")
+                                Text((Product.size?[2])!)
                               //  Text(viewmodel.list.filter(self.))
                                     .font(.system(size: 12))
                                     .fontWeight(self.didTapSize12 ?  .bold : .semibold)
@@ -324,7 +324,7 @@ struct ProductDetails: View {
                             Button(action: {
                                 self.didTapSize16.toggle()
                             }, label: {
-                                Text("16 OZ")
+                                Text((Product.size?[3])!)
                                     .font(.system(size: 12))
                                     .fontWeight(self.didTapSize16 ?  .bold : .semibold)
                                     .padding()
