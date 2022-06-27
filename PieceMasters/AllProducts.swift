@@ -12,6 +12,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 import Firebase
 
 struct AllProducts: View {
@@ -114,7 +115,8 @@ struct ProductView: View {
                                 ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)){
                                     VStack {
                                         //
-                                        Image("\(product.image)")
+                                        KFImage(URL(string:product.image))
+                                      //  Image("\(product.image)")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(height: 150)

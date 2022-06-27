@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import Kingfisher
 
 
 struct ProductDetails: View {
@@ -56,7 +57,7 @@ struct ProductDetails: View {
 //                            .frame(width: proxy.size.width, height: proxy.size.height  )
 //
 //                        }
-                    Image(Product.image)
+                    KFImage(URL(string:Product.image))
                         .resizable()
                                    .scaledToFit()
                                    .frame(width: 200, height: 200)
