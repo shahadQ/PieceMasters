@@ -14,6 +14,8 @@
 		02760D852861B83100E2AF3E /* tab bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02760D842861B83100E2AF3E /* tab bar.swift */; };
 		02760D872861BE0400E2AF3E /* Product1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 02760D862861BE0400E2AF3E /* Product1.scn */; };
 		02FBF0D4286B21250079FB5E /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FBF0D3286B21250079FB5E /* Splash.swift */; };
+		02FBF0DA286B2D630079FB5E /* ww.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FBF0D9286B2D630079FB5E /* ww.swift */; };
+		02FBF0DD286B376B0079FB5E /* Cart3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FBF0DC286B376B0079FB5E /* Cart3D.swift */; };
 		168407442861C8960071FC5F /* paymentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168407432861C8960071FC5F /* paymentPage.swift */; };
 		168407462861C9590071FC5F /* creditcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168407452861C9590071FC5F /* creditcard.swift */; };
 		168407482861C99D0071FC5F /* buttonForOtherPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168407472861C99D0071FC5F /* buttonForOtherPayment.swift */; };
@@ -60,6 +62,8 @@
 		02760D842861B83100E2AF3E /* tab bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tab bar.swift"; sourceTree = "<group>"; };
 		02760D862861BE0400E2AF3E /* Product1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Product1.scn; sourceTree = "<group>"; };
 		02FBF0D3286B21250079FB5E /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		02FBF0D9286B2D630079FB5E /* ww.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ww.swift; sourceTree = "<group>"; };
+		02FBF0DC286B376B0079FB5E /* Cart3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart3D.swift; sourceTree = "<group>"; };
 		168407432861C8960071FC5F /* paymentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentPage.swift; sourceTree = "<group>"; };
 		168407452861C9590071FC5F /* creditcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = creditcard.swift; sourceTree = "<group>"; };
 		168407472861C99D0071FC5F /* buttonForOtherPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonForOtherPayment.swift; sourceTree = "<group>"; };
@@ -123,6 +127,13 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		02FBF0D5286B25D90079FB5E /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		1684075128624D570071FC5F /* wafa */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +167,8 @@
 		77B170D52847452D001F9CBC = {
 			isa = PBXGroup;
 			children = (
+				02FBF0D9286B2D630079FB5E /* ww.swift */,
+				02FBF0D5286B25D90079FB5E /* New Group */,
 				02FBF0D3286B21250079FB5E /* Splash.swift */,
 				77B170E02847452D001F9CBC /* PieceMasters */,
 				77B170DF2847452D001F9CBC /* Products */,
@@ -185,11 +198,12 @@
 				777B92A9286ADD03008AE921 /* map.swift */,
 				88F7765B285F0F6B00C1A5AF /* MainPackaging.swift */,
 				777B928C285B098C008AE921 /* ProductDetails.swift */,
+				02FBF0DC286B376B0079FB5E /* Cart3D.swift */,
+				777B928E285B0A3D008AE921 /* Cart.swift */,
 				88F7765E285F1CDE00C1A5AF /* SearchBar.swift */,
 				77B1710D284BD07B001F9CBC /* GoogleService-Info.plist */,
 				88F7766228605A4C00C1A5AF /* AllProducts.swift */,
 				777B9290285B0AC2008AE921 /* backgroundRectangle.swift */,
-				777B928E285B0A3D008AE921 /* Cart.swift */,
 				777B929C28646FB6008AE921 /* boxProductDetails.swift */,
 				77B170E72847452E001F9CBC /* Preview Content */,
 			);
@@ -343,6 +357,8 @@
 				77B170E22847452D001F9CBC /* PieceMastersApp.swift in Sources */,
 				E3940608286688CF0036BF19 /* AuthViewModel.swift in Sources */,
 				02760D832861B73500E2AF3E /* MyPatternPicker.swift in Sources */,
+				02FBF0DD286B376B0079FB5E /* Cart3D.swift in Sources */,
+				02FBF0DA286B2D630079FB5E /* ww.swift in Sources */,
 				777B928F285B0A3E008AE921 /* Cart.swift in Sources */,
 				E39405FB286682DC0036BF19 /* signIN.swift in Sources */,
 			);

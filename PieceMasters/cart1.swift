@@ -2,35 +2,30 @@
 
 import SwiftUI
 
-struct Cart: View {
+struct Cart1: View {
     var Product:product
     var body: some View {
-        
+    
         NavigationView{
             ZStack {
-                Cart3D()
+                backgroundRectangle()
                 // product detailes
                 
                 HStack (spacing: 20){
-                    ZStack{
-                    Image("Rectangle2")
-                            .resizable()
-                            .frame(width: 80, height: 86.56)
-                         
                     Image(Product.image)
                         .resizable()
-                    }.padding(.leading ,20)
-                    VStack(alignment: .leading){
+                        .frame(width: 70, height: 76 )
+                    VStack(spacing: 4){
                         Text(Product.title)
                             .bold()
-                        Text(Product.amount)
-                            .font(.system(size:13))
+                        Text(Product.title)
+                            .fontWeight(.light)
                             .foregroundColor(Color.gray)
-                        Text("\(Product.price) $")
+                        Text(Product.price)
                             .bold()
-                    }.frame(width: 100, height: 20)
-                    }.padding(.top ,-130)
-
+                        
+                    }
+                    }
                 .padding(.top,-230)
                 .padding(.trailing,200)
                 Divider()
@@ -116,7 +111,9 @@ struct Cart: View {
                         .padding(.vertical)
                         //.padding(.horizontal, 100)
                         .frame(width: 328 , height: 63 )
+                        
                         .background(.white)
+                        
                         .border(.black)
                         .cornerRadius(3.0)
                     
@@ -134,12 +131,8 @@ struct Cart: View {
     
 
 
-struct Cart_Previews: PreviewProvider {
+struct Cart1_Previews: PreviewProvider {
     static var previews: some View {
-       AllProducts()
+        AllProducts()
     }
 }
-
-
-
-

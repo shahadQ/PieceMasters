@@ -456,7 +456,10 @@ struct ProductDetails: View {
                     NavigationLink(destination: {
                         
                         if self.didTapToBuyaProduct == true{
-                           Cart()
+                      Cart(Product:Product)
+                            
+                            
+                        
                          
                         }
                         else if self.didTapDesignPruduct == true{
@@ -484,7 +487,9 @@ struct ProductDetails: View {
              
                       
                         }
-                    }) {
+                    })
+                    
+                    {
                         Text("Continue Order")
                             .padding()
                             .padding(.horizontal)
