@@ -1,3 +1,5 @@
+
+
 //
 //  AllProducts.swift
 //  PieceMasters
@@ -16,8 +18,9 @@ import Kingfisher
 import Firebase
 
 struct AllProducts: View {
+    var index = 0
     var body: some View {
-        ProductView()
+        ProductView(categoryIndexzx: index)
     }
 }
 
@@ -29,7 +32,7 @@ struct AllProducts_Previews: PreviewProvider {
 
 
 struct ProductView: View {
-    
+
     @State var ProductData = [
         product(id: "11", title: "Cup",Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "Double wall paper cup", price: "100", offer: 15, isSelected: true),
         product(id: "22", title: "Ice cream Cup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ",image: "Cup2", amount: "The ice cream cups", price: "150",isSelected: false),
@@ -37,14 +40,18 @@ struct ProductView: View {
         product(id: "44", title: "Bags",Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "bag", amount: "Double wall paper cup", price: "100", isSelected: false),
         
     ]
-    
+//    var categoryIndexzx : Int
     var columns = Array(repeating: GridItem(.flexible()), count: 2)
     var categories = ["All", "Cups", "Boxes", "Bags"]
     @ObservedObject private var Productviewmodel = ViewModel()
-    @State var categoryIndexzx = 0
+    @State var categoryIndexzx : Int
     @State var text = ""
     @State var filterData : [product] = []
     @State private var searchQuery = ""
+    init(categoryIndexzx:Int){
+        self._categoryIndexzx = State(initialValue: categoryIndexzx)
+        Productviewmodel.getData()
+    }
     var body: some View {
       
         ZStack {
@@ -174,6 +181,7 @@ struct ProductView: View {
                                     
                                     
                                     Image(product.offer != nil ? "offer" : "")
+                                    
                                         .padding()
                                         .position(x: 30, y: 30)
                                 }
@@ -309,9 +317,9 @@ struct ProductView: View {
         
         
     }
-    init(){
-         Productviewmodel.getData()
-    }
+//    init(){
+//        Productviewmodel.getData()
+//    }
 }
 
 struct Categories: View {
@@ -417,4 +425,3 @@ struct Categories: View {
         
     }
 }
-

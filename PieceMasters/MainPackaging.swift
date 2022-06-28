@@ -37,7 +37,7 @@ struct MainPackaging: View {
     var body: some View {
         
         NavigationView{
-           
+            ScrollView(.vertical) {
             ZStack{
               
 
@@ -136,8 +136,17 @@ struct MainPackaging: View {
                     ScrollView(.horizontal ,showsIndicators: false) {
                         HStack(spacing: 20) {
                             ForEach(self.text.isEmpty ? IData : []) {iidata in
-                                VStack{
-                                
+                                let index = index(title: iidata.title)
+//                             let index = iidata.title == "All Products" ? 0 : 1
+                                NavigationLink(destination: {
+                                    
+                                    
+                                    AllProducts(index:index)
+                                    
+                                    
+                                    
+                                }, label: {VStack{
+                                    
                                     Image(iidata.ImageName)
                                         .resizable()
                                         .frame(width: 77, height: 75)
@@ -151,7 +160,9 @@ struct MainPackaging: View {
                                 
                                     .frame(width: 140, height: 104)
                                     .background(.white)
-                                .cornerRadius(15)
+                                .cornerRadius(15)})
+                           
+                                
                                 
                             }
                             
@@ -229,7 +240,27 @@ struct MainPackaging: View {
                 
                
         }
+        }
             }
+    
+    
+    func index(title:String)->Int{
+        switch title{
+        case "All Products":
+            return 0
+        case "Cups":
+            return 1
+        case "Boxes":
+            return 2
+        case "Bags":
+            return 3
+        default:
+            return 0
+            
+  
+            
+        }
+    }
     }
 
 
@@ -238,5 +269,6 @@ struct MainPackaging_Previews: PreviewProvider {
         MainPackaging()
     }
 }
+
 
 
