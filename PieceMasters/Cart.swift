@@ -1,7 +1,7 @@
 
 
 import SwiftUI
-
+import Kingfisher
 struct Cart: View {
     var Product:product
     var body: some View {
@@ -13,18 +13,19 @@ struct Cart: View {
                 
                 HStack (spacing: 20){
                     ZStack{
-                    Image("Rectangle2")
+                        KFImage(URL(string:Product.image))
                             .resizable()
                             .frame(width: 80, height: 86.56)
                          
-                    Image(Product.image)
-                        .resizable()
+                  //  Image(Product.image)
+                     //   .resizable()
                     }.padding(.leading ,20)
                     VStack(alignment: .leading){
                         Text(Product.title)
                             .bold()
                         Text(Product.amount)
-                            .font(.system(size:13))
+                           .font(.system(size:13))
+                         
                             .foregroundColor(Color.gray)
                         Text("\(Product.price) $")
                             .bold()
@@ -63,11 +64,11 @@ struct Cart: View {
                     VStack(spacing: 12 ){
                         // مؤقته > يجب تعديلها كمتغيرات مربوطة
                         
-                        Text("$228.80")
+                        Text("\(Product.price) $")
                             .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
-                        Text("- $28.80")
+                        Text("- $0.0")
                             .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
-                        Text("-$15.80")
+                        Text("-$0.0")
                             .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
                         Text("Free")
                             .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
@@ -83,7 +84,7 @@ struct Cart: View {
                 HStack( spacing:245){
                     Text("Total")
                         .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
-                    Text("185 $")
+                    Text("\(Product.price) $")
                         .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
                     
                     
