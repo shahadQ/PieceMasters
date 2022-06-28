@@ -48,7 +48,7 @@ struct navig: View {
             .alert(isPresented: $showAlert) {
                 Alert(
                     title: Text("TIPS"),
-                    message: Text("\n"+"Only for preview display" + "Product Color May Slightly Vary when printing.")
+                    message: Text("\n"+"Only for preview display" + "Product Color May Slightly Vary when printingss.")
                 )
             }
             

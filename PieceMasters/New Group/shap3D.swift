@@ -23,8 +23,6 @@ struct shap3D: View {
                  
 
                         .background(Color(red: 0.9725490196078431, green: 0.9725490196078431, blue: 0.9725490196078431))
-        
-        
                         .ignoresSafeArea(.all)
                         .shadow(radius: 0.1)
     }

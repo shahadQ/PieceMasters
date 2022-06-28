@@ -298,7 +298,7 @@ struct ProductView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 15))
                             .shadow(color: Color("iColor1").opacity(1.5), radius: 5, x:0, y: 5)
 
-                            .frame(width: 150, height: 290)
+                            .frame(width: 75, height: 40)
 
                             
                         }
@@ -395,7 +395,7 @@ struct Categories: View {
                 ZStack{
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color(index == data ? "mainfont" : "BACGR1"))
-                        .frame(width: 110, height: 36)
+                        .frame(width: 75, height: 40)
                 Text(categories[data])
                     
                     .font(.system(size: 18))
