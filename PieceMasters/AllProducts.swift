@@ -35,10 +35,11 @@ struct ProductView: View {
 
     @State var ProductData = [
         product(id: "11", title: "Cup",Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "Double wall paper cup", price: "100", offer: 15, isSelected: true),
-        product(id: "22", title: "Ice cream Cup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ",image: "Cup2", amount: "The ice cream cups", price: "150",isSelected: false),
-        product(id: "33", title: "Box", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ",image: "box", amount: "Double wall paper cup",  price: "210", isSelected: false),
-        product(id: "44", title: "Bags",Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "bag", amount: "Double wall paper cup", price: "100", isSelected: false),
+        product(id: "22", title: "Cup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ",image: "Cup2", amount: "The ice cream cups", price: "150",isSelected: false),
+        product(id: "33", title: "Box", Description: "Double wall paper box are made from two-layer cardboard.",image: "box", amount: "Double wall paper box",  price: "210", isSelected: false),
+        product(id: "44", title: "Bags",Description: "bags that have parallel handles that emerge from the inside of the bag.", image: "bag", amount: "Bag", price: "100", isSelected: false),
         
+     
     ]
 //    var categoryIndexzx : Int
     var columns = Array(repeating: GridItem(.flexible()), count: 2)
