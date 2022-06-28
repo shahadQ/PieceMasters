@@ -13,6 +13,7 @@
 		02760D832861B73500E2AF3E /* MyPatternPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02760D822861B73500E2AF3E /* MyPatternPicker.swift */; };
 		02760D852861B83100E2AF3E /* tab bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02760D842861B83100E2AF3E /* tab bar.swift */; };
 		02760D872861BE0400E2AF3E /* Product1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 02760D862861BE0400E2AF3E /* Product1.scn */; };
+		02FBF0D4286B21250079FB5E /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FBF0D3286B21250079FB5E /* Splash.swift */; };
 		168407442861C8960071FC5F /* paymentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168407432861C8960071FC5F /* paymentPage.swift */; };
 		168407462861C9590071FC5F /* creditcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168407452861C9590071FC5F /* creditcard.swift */; };
 		168407482861C99D0071FC5F /* buttonForOtherPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168407472861C99D0071FC5F /* buttonForOtherPayment.swift */; };
@@ -58,6 +59,7 @@
 		02760D822861B73500E2AF3E /* MyPatternPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPatternPicker.swift; sourceTree = "<group>"; };
 		02760D842861B83100E2AF3E /* tab bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tab bar.swift"; sourceTree = "<group>"; };
 		02760D862861BE0400E2AF3E /* Product1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Product1.scn; sourceTree = "<group>"; };
+		02FBF0D3286B21250079FB5E /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		168407432861C8960071FC5F /* paymentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentPage.swift; sourceTree = "<group>"; };
 		168407452861C9590071FC5F /* creditcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = creditcard.swift; sourceTree = "<group>"; };
 		168407472861C99D0071FC5F /* buttonForOtherPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonForOtherPayment.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		77B170D52847452D001F9CBC = {
 			isa = PBXGroup;
 			children = (
+				02FBF0D3286B21250079FB5E /* Splash.swift */,
 				77B170E02847452D001F9CBC /* PieceMasters */,
 				77B170DF2847452D001F9CBC /* Products */,
 			);
@@ -324,6 +327,7 @@
 				E3940606286688980036BF19 /* RegistrationViewModel.swift in Sources */,
 				777B92A8286ADBCF008AE921 /* address.swift in Sources */,
 				88F7766328605A4C00C1A5AF /* AllProducts.swift in Sources */,
+				02FBF0D4286B21250079FB5E /* Splash.swift in Sources */,
 				E3940603286687CE0036BF19 /* LoadingView.swift in Sources */,
 				E39405FF2866870B0036BF19 /* appleButton.swift in Sources */,
 				777B929B28613B9E008AE921 /* ViewModel.swift in Sources */,
@@ -469,7 +473,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PieceMasters/Preview Content\"";
-				DEVELOPMENT_TEAM = 99WH92J3A8;
+				DEVELOPMENT_TEAM = 5JQU78DCG7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PieceMasters/Info.plist;
@@ -502,7 +506,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PieceMasters/Preview Content\"";
-				DEVELOPMENT_TEAM = 99WH92J3A8;
+				DEVELOPMENT_TEAM = 5JQU78DCG7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PieceMasters/Info.plist;

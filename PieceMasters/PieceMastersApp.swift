@@ -17,8 +17,10 @@ struct PieceMastersApp: App {
     var body: some Scene {
         
         WindowGroup {
-//            MainPackaging()
-           tab_bar()}
+            Splash()
+            
+            
+        }
          
 //            WindowGroup {
 //            signIN()

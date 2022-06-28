@@ -373,7 +373,7 @@ struct Categories: View {
                 ZStack{
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color(index == data ? "mainfont" : "BACGR1"))
-                        .frame(width: 110, height: 36)
+                        .frame(width: 75, height: 36)
                 Text(categories[data])
                     
                     .font(.system(size: 18))
