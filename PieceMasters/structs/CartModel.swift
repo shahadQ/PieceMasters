@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct cart: Identifiable {
-    var id : String
-    let user : User
-    let products : product
-    var Quantity : Double
-    var TotalPrice: Double
-
-  
-}
+//struct cart: Identifiable {
+//    var id : String
+//   // let user : User
+//    let products : product
+//    var Quantity : Double
+//    var TotalPrice: Double
+//
+//  
+//}

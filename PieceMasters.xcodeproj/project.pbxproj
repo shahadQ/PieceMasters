@@ -28,6 +28,8 @@
 		777B92A02868F7F2008AE921 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 777B929F2868F7F2008AE921 /* Kingfisher */; };
 		777B92A42869969B008AE921 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777B92A32869969B008AE921 /* CartViewModel.swift */; };
 		777B92A628699729008AE921 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777B92A528699729008AE921 /* CartModel.swift */; };
+		777B92A8286ADBCF008AE921 /* address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777B92A7286ADBCE008AE921 /* address.swift */; };
+		777B92AA286ADD03008AE921 /* map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777B92A9286ADD03008AE921 /* map.swift */; };
 		77B170E22847452D001F9CBC /* PieceMastersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B170E12847452D001F9CBC /* PieceMastersApp.swift */; };
 		77B170E42847452D001F9CBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B170E32847452D001F9CBC /* ContentView.swift */; };
 		77B170E62847452E001F9CBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B170E52847452E001F9CBC /* Assets.xcassets */; };
@@ -69,7 +71,9 @@
 		777B929C28646FB6008AE921 /* boxProductDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boxProductDetails.swift; sourceTree = "<group>"; };
 		777B92A32869969B008AE921 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		777B92A528699729008AE921 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
-		77B170DE2847452D001F9CBC /* PieceMasters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PieceMasters.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		777B92A7286ADBCE008AE921 /* address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = address.swift; sourceTree = "<group>"; };
+		777B92A9286ADD03008AE921 /* map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = map.swift; sourceTree = "<group>"; };
+		77B170DE2847452D001F9CBC /* Brandit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brandit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B170E12847452D001F9CBC /* PieceMastersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceMastersApp.swift; sourceTree = "<group>"; };
 		77B170E32847452D001F9CBC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		77B170E52847452E001F9CBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,7 +162,7 @@
 		77B170DF2847452D001F9CBC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				77B170DE2847452D001F9CBC /* PieceMasters.app */,
+				77B170DE2847452D001F9CBC /* Brandit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,6 +178,8 @@
 				77B170E32847452D001F9CBC /* ContentView.swift */,
 				777B9297286136B2008AE921 /* structs */,
 				77B170E52847452E001F9CBC /* Assets.xcassets */,
+				777B92A7286ADBCE008AE921 /* address.swift */,
+				777B92A9286ADD03008AE921 /* map.swift */,
 				88F7765B285F0F6B00C1A5AF /* MainPackaging.swift */,
 				777B928C285B098C008AE921 /* ProductDetails.swift */,
 				88F7765E285F1CDE00C1A5AF /* SearchBar.swift */,
@@ -221,9 +227,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		77B170DD2847452D001F9CBC /* PieceMasters */ = {
+		77B170DD2847452D001F9CBC /* Brandit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77B170EC2847452E001F9CBC /* Build configuration list for PBXNativeTarget "PieceMasters" */;
+			buildConfigurationList = 77B170EC2847452E001F9CBC /* Build configuration list for PBXNativeTarget "Brandit" */;
 			buildPhases = (
 				77B170DA2847452D001F9CBC /* Sources */,
 				77B170DB2847452D001F9CBC /* Frameworks */,
@@ -233,7 +239,7 @@
 			);
 			dependencies = (
 			);
-			name = PieceMasters;
+			name = Brandit;
 			packageProductDependencies = (
 				77B17110284BD65B001F9CBC /* FirebaseAuth */,
 				77B17112284BD65B001F9CBC /* FirebaseFirestore */,
@@ -242,7 +248,7 @@
 				777B929F2868F7F2008AE921 /* Kingfisher */,
 			);
 			productName = PieceMasters;
-			productReference = 77B170DE2847452D001F9CBC /* PieceMasters.app */;
+			productReference = 77B170DE2847452D001F9CBC /* Brandit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -278,7 +284,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				77B170DD2847452D001F9CBC /* PieceMasters */,
+				77B170DD2847452D001F9CBC /* Brandit */,
 			);
 		};
 /* End PBXProject section */
@@ -316,6 +322,7 @@
 				777B929D28646FB6008AE921 /* boxProductDetails.swift in Sources */,
 				02760D852861B83100E2AF3E /* tab bar.swift in Sources */,
 				E3940606286688980036BF19 /* RegistrationViewModel.swift in Sources */,
+				777B92A8286ADBCF008AE921 /* address.swift in Sources */,
 				88F7766328605A4C00C1A5AF /* AllProducts.swift in Sources */,
 				E3940603286687CE0036BF19 /* LoadingView.swift in Sources */,
 				E39405FF2866870B0036BF19 /* appleButton.swift in Sources */,
@@ -328,6 +335,7 @@
 				1684074A2861C9DF0071FC5F /*  applePay.swift in Sources */,
 				02760D782861B21E00E2AF3E /* profile.swift in Sources */,
 				168407462861C9590071FC5F /* creditcard.swift in Sources */,
+				777B92AA286ADD03008AE921 /* map.swift in Sources */,
 				77B170E22847452D001F9CBC /* PieceMastersApp.swift in Sources */,
 				E3940608286688CF0036BF19 /* AuthViewModel.swift in Sources */,
 				02760D832861B73500E2AF3E /* MyPatternPicker.swift in Sources */,
@@ -464,6 +472,10 @@
 				DEVELOPMENT_TEAM = 99WH92J3A8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PieceMasters/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Brandit;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Brand It needs to access your location . For reliable delivery ,\nBbrand It collects location data from the time you open the app. This\nimprovesour delivery services and more.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Brand It needs to access your location . For reliable delivery ,\nBbrand It collects location data from the time you open the app. This\nimprovesour delivery services and more.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -493,6 +505,10 @@
 				DEVELOPMENT_TEAM = 99WH92J3A8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PieceMasters/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Brandit;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Brand It needs to access your location . For reliable delivery ,\nBbrand It collects location data from the time you open the app. This\nimprovesour delivery services and more.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Brand It needs to access your location . For reliable delivery ,\nBbrand It collects location data from the time you open the app. This\nimprovesour delivery services and more.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -523,7 +539,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77B170EC2847452E001F9CBC /* Build configuration list for PBXNativeTarget "PieceMasters" */ = {
+		77B170EC2847452E001F9CBC /* Build configuration list for PBXNativeTarget "Brandit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				77B170ED2847452E001F9CBC /* Debug */,
