@@ -96,34 +96,36 @@ struct Cart: View {
                     
                 }   .padding(.top,-70)
                 .padding(.top, 220)
-                Button(action:{
-
-                }) {
-                    Text("Proceed to checkout")
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                        .padding(.vertical)
-                        .frame(width: 328 , height: 63 )
-                        .background(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
-
-                       
-                        .cornerRadius(10.0)
-                }
-
-                Button(action:{
-
-                }) {
-                    Text("Continue shopping ")
-                        
-                    
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
-                        .frame(width: 328 , height: 63 )
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157), lineWidth: 1)
-                        )
-                }
+                    VStack{
+                        NavigationLink(destination: signIN()
+                                       
+                        ) {    Text("Proceed to checkout")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                                .padding(.vertical)
+                            //.padding(.horizontal, 100)
+                                .frame(width: 328 , height: 63 )
+                                .background(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+                            
+                                .cornerRadius(10.0)
+                        }
+                        NavigationLink(destination: AllProducts()
+                                       
+                        ) {    Text("Continue shopping ")
+                            
+                                .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+                                .fontWeight(.bold)
+                                .padding(.vertical)
+                            //.padding(.horizontal, 100)
+                                .frame(width: 328 , height: 63 )
+                            
+                                .background(.white)
+                            
+                                .border(.black)
+                                .cornerRadius(3.0)
+                        }
+                    }
+                    //.padding(.top,)
 
                 } .padding(.bottom, 40)
               
@@ -137,7 +139,7 @@ struct Cart: View {
 
 struct Cart_Previews: PreviewProvider {
     static var previews: some View {
-       AllProducts()
+       Cart(Product: product( id: "11", title: "cuup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "PAPER CUP",  price: "90", offer: 1, isSelected: false))
     }
 }
 
