@@ -27,22 +27,23 @@ struct Cart: View {
                            .font(.system(size:13))
                          
                             .foregroundColor(Color.gray)
-                        Text("\(Product.price) $")
+                        Text("\(Product.price) RS")
                             .bold()
                     }.frame(width: 100, height: 20)
                     }.padding(.top ,-130)
 
                 .padding(.top,-230)
                 .padding(.trailing,200)
+                
                 Divider()
                     .padding(.horizontal)
-                    .padding(.top, -120)
-                
+                    .padding(.top,-260)
+                VStack{
                     Text("Payment Summary")
                         .font(.headline)
                         .bold()
                         .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
-                        .padding(.top,-100)
+                        .padding(.top,-240)
                         .padding(.trailing,200)
                 HStack( spacing:150){
                     VStack(alignment:.leading, spacing: 12 ){
@@ -64,23 +65,26 @@ struct Cart: View {
                     VStack(spacing: 12 ){
                         // مؤقته > يجب تعديلها كمتغيرات مربوطة
                         
-                        Text("\(Product.price) $")
+                        Text("\(Product.price) RS")
                             .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
-                        Text("- $0.0")
+                        Text("- 0.0")
                             .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
-                        Text("-$0.0")
+                        Text("-0.0")
                             .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
                         Text("Free")
                             .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
                     }
-                    
+                }
+                .padding(.top, -220)
                     
                     
                     
                 }
+              
                 Divider()
                     .padding(.horizontal)
-                    .padding(.top,170)
+                    .padding(.top,-70)
+                VStack{
                 HStack( spacing:245){
                     Text("Total")
                         .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
@@ -89,9 +93,8 @@ struct Cart: View {
                     
                     
                     
-                }
+                }   .padding(.top,-70)
                 .padding(.top, 220)
-               
                 Button(action:{
 
                 }) {
@@ -99,37 +102,33 @@ struct Cart: View {
                         .foregroundColor(.white)
                         .fontWeight(.bold)
                         .padding(.vertical)
-                        //.padding(.horizontal, 100)
                         .frame(width: 328 , height: 63 )
                         .background(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
-//
+
                        
                         .cornerRadius(10.0)
                 }
-                .padding(.top, 360)
+
                 Button(action:{
 
                 }) {
                     Text("Continue shopping ")
                         
-                        .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+                    
                         .fontWeight(.bold)
-                        .padding(.vertical)
-                        //.padding(.horizontal, 100)
+                        .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
                         .frame(width: 328 , height: 63 )
-                        .background(.white)
-                        .border(.black)
-                        .cornerRadius(3.0)
-                    
-                       // .cornerRadius(10.0)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157), lineWidth: 1)
+                        )
                 }
-                .padding(.top, 530)
-                    
+
+                } .padding(.bottom, 40)
               
                 }
                     }
-//            .navigationTitle("Shopping Cart")
-//            .navigationBarTitleDisplayMode(.inline)
+
                 }
                 }
     

@@ -18,8 +18,7 @@ struct threeDModel: View {
     //
 
     @State private var presentImporter = false
-    
-    
+
     @State var isPlaying : Bool = false
     @State var isSelectedColor : Bool = false
     @State var isSelectedPicker : Bool = false
@@ -38,7 +37,7 @@ struct threeDModel: View {
     var BACGR: Color = (Color(red: 0.9725490196078431, green: 0.9725490196078431, blue: 0.9725490196078431))
     var  BACGR1: Color = Color(red: 0.85, green: 0.85, blue: 0.85)
     
-    
+   
     
     var body: some View {
         
@@ -357,6 +356,7 @@ struct threeDModel: View {
                         }
                         
                         else{
+                         
                             Button("Continue Order", action: {
                                 
                                 

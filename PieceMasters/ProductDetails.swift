@@ -449,7 +449,7 @@ struct ProductDetails: View {
                         Text("Total Price :")
                             .foregroundColor(Color(red: 0.5098039215686274, green: 0.49411764705882355, blue: 0.49411764705882355))
                          
-                        Text(Product.price)
+                        Text("\(Product.price)RS")
                             .font(.title)
                             .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
                     }

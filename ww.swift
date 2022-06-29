@@ -9,11 +9,15 @@ import SwiftUI
 
 struct ww: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Hello, World!")
-            Text("Hello, World!Hello, World!")
-            Text("Hello, World!")
-                
+        VStack() {
+            Text(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/)
+            Text(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/)
+            Text(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/)
+            HStack {
+                Text(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/)
+
+            }
+            
         }.frame(width: 300, height: 30)
     }
 }
