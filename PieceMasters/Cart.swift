@@ -11,6 +11,7 @@ struct Cart: View {
                 Cart3D()
                 // product detailes
                 
+               
                 HStack (spacing: 20){
                     ZStack{
                         KFImage(URL(string:Product.image))
@@ -88,7 +89,7 @@ struct Cart: View {
                 HStack( spacing:245){
                     Text("Total")
                         .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
-                    Text("\(Product.price) $")
+                    Text("\(Product.price) RS")
                         .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
                     
                     

@@ -45,7 +45,7 @@ struct tab_bar: View {
                         }
                     // Screen3
                     NavigationView{
-//                        signIN()
+
                         profile()
                     }
 
