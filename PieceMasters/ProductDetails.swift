@@ -423,8 +423,9 @@ struct ProductDetails: View {
                                         
                             })
                             }
+                            .padding(.bottom, 90.0)
                         }
-                       // .padding()
+                     // .padding()
                         
                         .padding(.bottom, 90.0)
                         
@@ -460,9 +461,10 @@ struct ProductDetails: View {
                             
                             
                         
-                         
+                         //view 3Dmodel
                         }
-                        else if self.didTapDesignPruduct == true{
+                        else if self.didTapDesignPruduct == true || self.didTapDesignPruduct == false
+                        {
                             
                          threeDModel()
                             Text("")
