@@ -20,8 +20,8 @@ struct tab_bar: View {
 
                     NavigationView{
 
-                        MainPackaging()
-//                        AllProducts()
+                   MainPackaging()
+                 //     AllProducts()
 
                     }
 
