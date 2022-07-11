@@ -9,24 +9,40 @@ import SwiftUI
 import Firebase
 
 
-struct signIN: View {
-    var body: some View {
-        LoginView()
-            .environmentObject(AuthViewModel())
-    }
-}
-
-struct signINView_Previews: PreviewProvider {
-    static var previews: some View {
-        signIN()
-
-    }
-}
-struct LoginView : View {
+struct LoginView: View {
+    
     @EnvironmentObject var viewModel: AuthViewModel
     @AppStorage("email") var email = ""
     @AppStorage("password") var password = ""
     
+    func checkIfUserLoggedIn() {
+        
+        if Auth.auth().currentUser?.uid != nil {
+            LoginView()
+            
+        } else {
+
+            RegistrationView()
+        }
+    }
+//    var body: some View {
+//
+//        LoginView()
+//            .environmentObject(AuthViewModel())
+//    }
+
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
+                  .environmentObject(AuthViewModel())
+
+    }
+}
+//struct LoginView : View {
+//    @EnvironmentObject var viewModel: AuthViewModel
+//    @AppStorage("email") var email = ""
+//    @AppStorage("password") var password = ""
+//
     
     var body: some View{
         
@@ -129,13 +145,16 @@ HStack {
             
             }
         .navigationBarHidden(true)
+//       // .alert(alertTitle, isPresented: $showingAlert) {
+//            Button("OK", role: .cancel) { }
+        }
         .fullScreenCover(isPresented: $viewModel.isAouthenticatting) {
             MainPackaging()
         }
-       // .navigationTitle("LOGIN")
-    }
-            
+        .onAppear {
+            checkIfUserLoggedIn()
         }
+    }
 
 
 
@@ -167,6 +186,4 @@ struct ForgetPassView: View {
         print("FRFF")
     }
 }
-
-
 }

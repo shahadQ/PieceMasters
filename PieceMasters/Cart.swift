@@ -97,7 +97,7 @@ struct Cart: View {
                 }   .padding(.top,-70)
                 .padding(.top, 220)
                     VStack{
-                        NavigationLink(destination: signIN()
+                        NavigationLink(destination: LoginView()
                                        
                         ) {    Text("Proceed to checkout")
                                 .foregroundColor(.white)

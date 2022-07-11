@@ -14,6 +14,8 @@ final class AuthViewModel:ObservableObject{
     @Published var isLoading : Bool = false
     let users = "Users"
     static let shared = AuthViewModel()
+    @Published  private var showingAlert: Bool = false
+    @Published  private var alertTitle: String = ""
 
     func fetchUser(){
         guard let uid = Auth.auth().currentUser?.uid  else {return}
@@ -32,7 +34,7 @@ final class AuthViewModel:ObservableObject{
         self.showLoadingView()
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let error = error{
-                print("wrong passward or mail ",error)
+                self.showAlert("\(error.localizedDescription)")
                 self.hideLoadingView()
             }
             else{
@@ -48,6 +50,10 @@ final class AuthViewModel:ObservableObject{
         try? Auth.auth().signOut()
         self.isAouthenticatting.toggle()
         self.user=nil
+    }
+    func showAlert(_ title: String){
+        alertTitle = title
+        showingAlert = true
     }
 
     

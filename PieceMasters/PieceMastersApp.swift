@@ -18,7 +18,8 @@ struct PieceMastersApp: App {
         
         WindowGroup {
             Splash()
-            
+                .environmentObject(registrationViewModel)
+                      .environmentObject(AuthViewModel.shared)
             
         }
          

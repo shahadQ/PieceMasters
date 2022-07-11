@@ -21,6 +21,7 @@ final class  RegistrationViewModel : ObservableObject{
     @Published var isLoading : Bool = false
     var authViewModel = AuthViewModel.shared
     let users = "Users"
+    @State private var showAlert = false
     
     
     func isValidProfile()->Bool{
@@ -37,6 +38,7 @@ final class  RegistrationViewModel : ObservableObject{
     
     func createUser(){
         guard isValidProfile() else {
+            showAlert = true
             print("Invalid Profile")
             return
         }

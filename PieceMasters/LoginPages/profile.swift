@@ -121,6 +121,7 @@ struct profile: View {
 
                             
                             Button(action: {
+                                
                             }) {
                                 Image("Saved")
                                     .resizable()
@@ -325,6 +326,7 @@ struct profile: View {
                         .frame(width: 320, alignment: .bottomLeading)
                         
                         Button(action: {
+                            authViewModel.handleSignout()
                         }) {
                             Image(systemName: "chevron.forward")
                                 .font(.system(size: 16 ).bold())

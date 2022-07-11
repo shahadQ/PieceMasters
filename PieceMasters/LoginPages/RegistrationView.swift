@@ -132,7 +132,7 @@ struct RegistrationView: View {
 
 
                     NavigationLink {
-                        signIN().navigationBarBackButtonHidden(true)
+                        LoginView().navigationBarBackButtonHidden(true)
                     }
                     label : {
                 HStack {
