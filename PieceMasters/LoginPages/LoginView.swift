@@ -18,6 +18,7 @@ struct LoginView: View {
     func checkIfUserLoggedIn() {
         
         if Auth.auth().currentUser?.uid != nil {
+            
             LoginView()
             
         } else {
@@ -51,14 +52,14 @@ struct LoginView_Previews: PreviewProvider {
             backgroundRectangle()
          
         VStack{
-                Text ("LOG IN")
+                Text ("Sign IN")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
                     .multilineTextAlignment(.leading)
                  
                     .padding(.trailing,240)
-                    .padding(.top,-75)
+                    .padding(.top,-180)
             
                     HStack(spacing: 25){
                         Image(systemName: "envelope.fill")
@@ -68,10 +69,10 @@ struct LoginView_Previews: PreviewProvider {
                             .padding(.leading,28)
                         TextField("Email Address", text: $email)
                     }
-                    .padding(.top, 50)
+                    .padding(.top, -50)
                     Divider()
                 .padding(.horizontal)
-                .padding(.top, 10)
+                .padding(.top, -15)
                 HStack(){
                     Image( "lock")
                         .resizable()
@@ -93,7 +94,7 @@ struct LoginView_Previews: PreviewProvider {
                     viewModel.logInUser(email: email, password: password)
 
                 }) {
-                    Text("LOGIN")
+                    Text("SignIn")
                         .foregroundColor(.white)
                         .fontWeight(.bold)
                         .padding(.vertical)
@@ -104,26 +105,26 @@ struct LoginView_Previews: PreviewProvider {
                        
                         .cornerRadius(10.0)
                 }
-                .padding()
-                HStack(spacing: 15){
-                    Rectangle()
-                        .fill(Color.gray)
-                    .frame(height: 1)
-                    
-                    Text("Or Login with")
-                        .font(.callout)
-                    
-                    
-                    Rectangle()
-                    .fill(Color.gray)
-                    .frame(height: 1)
-                }
-             .padding(.horizontal, 20)
-             .padding(.top,20)
+                .padding(.top,80)
+//                HStack(spacing: 15){
+//                    Rectangle()
+//                        .fill(Color.gray)
+//                    .frame(height: 1)
+//
+//                    Text("Or SignIn with")
+//                        .font(.callout)
+//
+//
+//                    Rectangle()
+//                    .fill(Color.gray)
+//                    .frame(height: 1)
+//                }
+//             .padding(.horizontal, 20)
+//             .padding(.top,20)
                 
-                VStack {
-                    appleButton()
-                        .padding(.top,20)
+          //  VStack {
+//                    appleButton()
+//                        .padding(.top,20)
 
               
                     NavigationLink {
@@ -137,7 +138,7 @@ HStack {
                     }
                 }
                 .padding(.top,10)
-                }
+              //  }
             }
             if viewModel.isLoading{
                 LoadingView()

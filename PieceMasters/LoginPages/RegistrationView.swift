@@ -9,6 +9,8 @@ import SwiftUI
 struct RegistrationView: View {
     @EnvironmentObject var registrationViewModel : RegistrationViewModel
     @EnvironmentObject var viewModel: AuthViewModel
+    @State private var showingAlert: Bool = false
+    @State private var alertTitle: String = ""
     
   
     var body: some View {
@@ -22,7 +24,7 @@ struct RegistrationView: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
                     .multilineTextAlignment(.leading)
-                    .padding(.top,-100)
+                    .padding(.top,-150)
                     .padding(.trailing,250)
             Group{
              
@@ -111,23 +113,23 @@ struct RegistrationView: View {
                         .cornerRadius(10.0)
                 }
             
-                HStack(spacing: 15){
-                    Rectangle()
-                        .fill(Color.gray)
-                    .frame(height: 1)
-                    
-                    Text("Or Login with")
-                        .font(.callout)
-                    
-                    
-                    Rectangle()
-                    .fill(Color.gray)
-                    .frame(height: 1)
-                }
-             .padding(.horizontal, 20)
-             .padding(.top,20)
-                VStack{
-                    appleButton()
+//                HStack(spacing: 15){
+//                    Rectangle()
+//                        .fill(Color.gray)
+//                    .frame(height: 1)
+//
+//                    Text("Or Login with")
+//                        .font(.callout)
+//
+//
+//                    Rectangle()
+//                    .fill(Color.gray)
+//                    .frame(height: 1)
+//                }
+//             .padding(.horizontal, 20)
+//             .padding(.top,20)
+//                VStack{
+//                    appleButton()
                         .padding(.top,20)
 
 
@@ -145,14 +147,19 @@ struct RegistrationView: View {
                     }
 
                // .padding()
-                }
+                
             }
            
             if registrationViewModel.isLoading{LoadingView()}
             
         }
         .navigationBarHidden(true)
+        .alert(alertTitle, isPresented: $showingAlert) {
+            Button("OK", role: .cancel) { }
+        }
+
         .fullScreenCover(isPresented: $viewModel.isAouthenticatting) {MainPackaging() }
+        
       
      
     }
