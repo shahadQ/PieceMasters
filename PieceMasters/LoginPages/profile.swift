@@ -35,22 +35,15 @@ struct profile: View {
                         .font(.title2).bold()
                         .font(.largeTitle)
                         .foregroundColor(PrimaryColor)
-                //.padding(.bottom, 700.0)
                 TextField("First Name", text: $prifileViewModel.firstName)
                         .offset(x: 0, y: 0)
                         .foregroundColor(PrimaryColor)
                     TextField("Last Name", text: $prifileViewModel.lastName)
-                        .offset(x: -80, y: 0)
+                        .offset(x: -100, y: 0)
                         .foregroundColor(PrimaryColor)
-//                    .font(.title2).bold()
-//                    .padding(.bottom, 700.0)
-   
-//                    .font(.largeTitle)
-//                    .foregroundColor(PrimaryColor)
-//                    .frame(width: 380, alignment: .bottomLeading)
 
                 }
-                .offset(x: 50, y: -350)
+               .offset(x: 40, y: -300)
              
             }
             
@@ -153,7 +146,7 @@ struct profile: View {
                     
                     
                 }
-                .padding(EdgeInsets(top: 15, leading: 36, bottom: 30, trailing: 36))
+                .padding(EdgeInsets(top: 35, leading: 36, bottom: 30, trailing: 36))
 
                 
        //section  list info   --------------------------------------------------------------
