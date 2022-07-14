@@ -21,8 +21,8 @@ final class  RegistrationViewModel : ObservableObject{
     @Published var isLoading : Bool = false
     var authViewModel = AuthViewModel.shared
     let users = "Users"
-    @State private var showingAlert: Bool = false
-    @State private var alertTitle: String = ""
+    @Published   var showingAlert: Bool = false
+    @Published   var alertTitle: String = ""
     
     
     func isValidProfile()->Bool{
@@ -39,23 +39,23 @@ final class  RegistrationViewModel : ObservableObject{
     
     func createUser(){
         guard isValidProfile() else {
-            self.showAlert("Invalid Profile")
-
             print("Invalid Profile")
             return
         }
-
 
         self.showLoadingView()
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let _ = error {
                 self.showAlert("\(error?.localizedDescription)")
+                print("error")
                 print("Create Profile Failure")
                 self.hideLoadingView()
                 return
             }
            
             else{
+                self.showAlert("Successfully created user \( result?.user.uid ?? "")")
+
                 print("Successfully created user \( result?.user.uid ?? "")")
                 var userData : [String:String] = [
                     User.id:result!.user.uid,
@@ -71,6 +71,7 @@ final class  RegistrationViewModel : ObservableObject{
         }
         
     }
+   
     func showAlert(_ title: String){
         alertTitle = title
         showingAlert = true

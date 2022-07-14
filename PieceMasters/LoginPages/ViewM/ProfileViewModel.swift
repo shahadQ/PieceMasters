@@ -46,11 +46,7 @@ final class ProfileViewModel : ObservableObject{
            // print("Hello \(self.user?.firstName)","❤️")
         }
     }
-    
-    
-    
-    
-    
+
     
     
 //    func updateProfile(){

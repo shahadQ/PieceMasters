@@ -9,8 +9,8 @@ import SwiftUI
 struct RegistrationView: View {
     @EnvironmentObject var registrationViewModel : RegistrationViewModel
     @EnvironmentObject var viewModel: AuthViewModel
-    @State private var showingAlert: Bool = false
-    @State private var alertTitle: String = ""
+    @State  var showingAlert: Bool = false
+    @State  var alertTitle: String = ""
     
   
     var body: some View {
@@ -145,8 +145,6 @@ struct RegistrationView: View {
                         Text("Sign in ")
                     }
                     }
-
-               // .padding()
                 
             }
            
@@ -154,11 +152,13 @@ struct RegistrationView: View {
             
         }
         .navigationBarHidden(true)
-        .alert(alertTitle, isPresented: $showingAlert) {
-            Button("OK", role: .cancel) { }
+        .alert(registrationViewModel.alertTitle, isPresented: $registrationViewModel.showingAlert) {
+           Button("OK") { }
         }
-
-        .fullScreenCover(isPresented: $viewModel.isAouthenticatting) {MainPackaging() }
+        .fullScreenCover(isPresented: $viewModel.isAouthenticatting) {
+            paymentPage()
+        }
+     
         
       
      

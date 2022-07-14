@@ -12,10 +12,11 @@ final class AuthViewModel:ObservableObject{
     @Published var isAouthenticatting = false
     @Published var user : User?
     @Published var isLoading : Bool = false
+    @Published var islogIn : Bool = false
     let users = "Users"
     static let shared = AuthViewModel()
-    @Published  private var showingAlert: Bool = false
-    @Published  private var alertTitle: String = ""
+    @Published   var showingAlert: Bool = false
+    @Published   var alertTitle: String = ""
 
     func fetchUser(){
         guard let uid = Auth.auth().currentUser?.uid  else {return}
@@ -25,7 +26,6 @@ final class AuthViewModel:ObservableObject{
                 return
             }
             self.user = User(dictionary: data)
-            print("Hello \(self.user?.firstName)","❤️")
         }
     }
     
@@ -35,12 +35,16 @@ final class AuthViewModel:ObservableObject{
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let error = error{
                 self.showAlert("\(error.localizedDescription)")
+                print("not logged in ")
                 self.hideLoadingView()
             }
             else{
                 self.hideLoadingView()
                 self.fetchUser()
                 self.isAouthenticatting.toggle()
+                print("logged in ")
+                print("isAouthenticating\(self.isAouthenticatting)")
+                
             }
         }
     }
@@ -51,6 +55,14 @@ final class AuthViewModel:ObservableObject{
         self.isAouthenticatting.toggle()
         self.user=nil
     }
+    func checkIfUserLoggedIn() {
+        
+        if Auth.auth().currentUser?.uid != nil {
+            
+            self.isAouthenticatting = true
+        }
+    }
+
     func showAlert(_ title: String){
         alertTitle = title
         showingAlert = true
@@ -59,5 +71,6 @@ final class AuthViewModel:ObservableObject{
     
     private func showLoadingView(){isLoading = true}
     private func hideLoadingView(){isLoading = false}
+    private func showLogInPage(){islogIn = true}
 }
 

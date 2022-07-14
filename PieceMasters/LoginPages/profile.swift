@@ -306,7 +306,6 @@ struct profile: View {
                     }
                     //line
                     Divider()
-                    
                 }
                 .padding(EdgeInsets(top: 0, leading: 36, bottom: 10, trailing: 36))
 
@@ -326,6 +325,34 @@ struct profile: View {
                         .frame(width: 320, alignment: .bottomLeading)
                         
                         Button(action: {
+                        }) {
+                            Image(systemName: "chevron.forward")
+                                .font(.system(size: 16 ).bold())
+                                .font(.headline)
+                                .foregroundColor(.gray)
+                        }
+                        
+                    }
+                    Divider()
+                    
+                }
+                .padding(EdgeInsets(top: 0, leading: 36, bottom: 10, trailing: 36))
+                // sign out
+                VStack{
+                    HStack {
+                        
+                        Label {
+                            Text("Sign Out ")
+                        .foregroundColor(PrimaryColor)
+                        } icon: {
+                            Image(systemName: "person.badge.minus")
+
+                                .foregroundColor(SecondaryColor)
+
+                        }
+                        .frame(width: 320, alignment: .bottomLeading)
+                        
+                        Button(action: {
                             authViewModel.handleSignout()
                         }) {
                             Image(systemName: "chevron.forward")
@@ -335,7 +362,6 @@ struct profile: View {
                         }
                         
                     }
-                    //line
                     Divider()
                     
                 }

@@ -8,29 +8,13 @@
 import SwiftUI
 import Firebase
 
-
 struct LoginView: View {
     
     @EnvironmentObject var viewModel: AuthViewModel
     @AppStorage("email") var email = ""
     @AppStorage("password") var password = ""
-    
-    func checkIfUserLoggedIn() {
-        
-        if Auth.auth().currentUser?.uid != nil {
-            
-            LoginView()
-            
-        } else {
 
-            RegistrationView()
-        }
-    }
-//    var body: some View {
-//
-//        LoginView()
-//            .environmentObject(AuthViewModel())
-//    }
+
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
@@ -39,12 +23,8 @@ struct LoginView_Previews: PreviewProvider {
 
     }
 }
-//struct LoginView : View {
-//    @EnvironmentObject var viewModel: AuthViewModel
-//    @AppStorage("email") var email = ""
-//    @AppStorage("password") var password = ""
-//
-    
+
+
     var body: some View{
         
         NavigationView{
@@ -87,7 +67,8 @@ struct LoginView_Previews: PreviewProvider {
                     .padding(.horizontal)
                     .padding(.top, 5)
 
-               ForgetPassView()
+               
+             ForgetPassView()
               
                 
                 Button(action:{
@@ -106,6 +87,7 @@ struct LoginView_Previews: PreviewProvider {
                         .cornerRadius(10.0)
                 }
                 .padding(.top,80)
+            
 //                HStack(spacing: 15){
 //                    Rectangle()
 //                        .fill(Color.gray)
@@ -128,7 +110,8 @@ struct LoginView_Previews: PreviewProvider {
 
               
                     NavigationLink {
-                        RegistrationView().navigationBarBackButtonHidden(true)
+                        RegistrationView()
+                        .navigationBarBackButtonHidden(true)
                     }
                     label:{
 HStack {
@@ -138,28 +121,26 @@ HStack {
                     }
                 }
                 .padding(.top,10)
-              //  }
+            
             }
             if viewModel.isLoading{
                 LoadingView()
             }
             
             }
-        .navigationBarHidden(true)
-//       // .alert(alertTitle, isPresented: $showingAlert) {
-//            Button("OK", role: .cancel) { }
+       .navigationBarHidden(true)
+        .alert(viewModel.alertTitle, isPresented: $viewModel.showingAlert) {
+           Button("OK", role: .cancel) { }
         }
         .fullScreenCover(isPresented: $viewModel.isAouthenticatting) {
-            MainPackaging()
-        }
-        .onAppear {
-            checkIfUserLoggedIn()
+            paymentPage()
         }
     }
 
 
-
-struct ForgetPassView: View {
+}
+}
+struct ForgetPassView:  View {
     
     var body: some View {
         
@@ -186,5 +167,4 @@ struct ForgetPassView: View {
         
         print("FRFF")
     }
-}
 }

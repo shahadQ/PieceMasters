@@ -23,13 +23,6 @@ struct PieceMastersApp: App {
             
         }
          
-//            WindowGroup {
-//            signIN()
-//                .environmentObject(registrationViewModel)
-//            .environmentObject(AuthViewModel.shared)
-//
-//
-//        }
         
     }
 }

@@ -4,6 +4,7 @@ import SwiftUI
 import Kingfisher
 struct Cart: View {
     var Product:product
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         
         NavigationView{
@@ -96,6 +97,7 @@ struct Cart: View {
                     
                 }   .padding(.top,-70)
                 .padding(.top, 220)
+              
                     VStack{
                         NavigationLink(destination: LoginView()
                                        
@@ -109,6 +111,7 @@ struct Cart: View {
                             
                                 .cornerRadius(10.0)
                         }
+
                         NavigationLink(destination: AllProducts()
                                        
                         ) {    Text("Continue shopping ")
@@ -125,9 +128,9 @@ struct Cart: View {
                                 .cornerRadius(3.0)
                         }
                     }
-                    //.padding(.top,)
+                   
 
-                } .padding(.bottom, 40)
+                } .padding( )
               
                 }
                     }
@@ -140,6 +143,7 @@ struct Cart: View {
 struct Cart_Previews: PreviewProvider {
     static var previews: some View {
        Cart(Product: product( id: "11", title: "cuup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "PAPER CUP",  price: "90", offer: 1, isSelected: false))
+            .environmentObject(AuthViewModel())
     }
 }
 
