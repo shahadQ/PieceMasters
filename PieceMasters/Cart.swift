@@ -29,7 +29,7 @@ struct Cart: View {
                            .font(.system(size:13))
                          
                             .foregroundColor(Color.gray)
-                        Text("\(Product.price) RS")
+                        Text("\(Product.price) SR")
                             .bold()
                     }.frame(width: 100, height: 20)
                     }.padding(.top ,-130)
@@ -65,9 +65,8 @@ struct Cart: View {
                         
                     }
                     VStack(spacing: 12 ){
-                        // مؤقته > يجب تعديلها كمتغيرات مربوطة
                         
-                        Text("\(Product.price) RS")
+                        Text("\(Product.price) SR")
                             .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
                         Text("- 0.0")
                             .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
@@ -90,7 +89,7 @@ struct Cart: View {
                 HStack( spacing:245){
                     Text("Total")
                         .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
-                    Text("\(Product.price) RS")
+                    Text("\(Product.price) SR")
                         .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
                     
                     

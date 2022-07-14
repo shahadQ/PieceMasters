@@ -213,14 +213,10 @@ HStack(spacing: -40) {
 
                }
 
-               Button {
-
-                   print("Button pressed")
-
-               } label: {
-
-                   Text("Procced  To Checkout").fontWeight(.bold)
-
+               NavigationLink(destination: paymentPage()
+                              
+               ) {          Text("Procced  To Checkout").fontWeight(.bold)
+                   
                        .frame(width: 340, height: 65)
 
 
@@ -230,10 +226,8 @@ HStack(spacing: -40) {
                                    .foregroundColor(Color.white)
 
                                    .cornerRadius(10)
-
-
-
                }
+
 
                .padding(.bottom , 90)
 

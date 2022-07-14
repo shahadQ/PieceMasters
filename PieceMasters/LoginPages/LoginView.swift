@@ -27,12 +27,12 @@ struct LoginView_Previews: PreviewProvider {
 
     var body: some View{
         
-        NavigationView{
+       // NavigationView{
         ZStack{
             backgroundRectangle()
          
         VStack{
-                Text ("Sign IN")
+                Text ("Sign in")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
@@ -75,7 +75,7 @@ struct LoginView_Previews: PreviewProvider {
                     viewModel.logInUser(email: email, password: password)
 
                 }) {
-                    Text("SignIn")
+                    Text("Sign In")
                         .foregroundColor(.white)
                         .fontWeight(.bold)
                         .padding(.vertical)
@@ -133,9 +133,9 @@ HStack {
            Button("OK", role: .cancel) { }
         }
         .fullScreenCover(isPresented: $viewModel.isAouthenticatting) {
-            paymentPage()
+            map()
         }
-    }
+   // }
 
 
 }

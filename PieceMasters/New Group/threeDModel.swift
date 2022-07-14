@@ -340,7 +340,7 @@ struct threeDModel: View {
                         .position(x: 100, y: 590)
                         
                         
-                        
+                        // THE FUNC CHECK IF ALL FILEDS IS SELECTED
                         if selectedPicker == "" && selectedColor ==  Color(.systemBackground) && (image == nil) {
                             
                             Button("Continue Order", action: {})
