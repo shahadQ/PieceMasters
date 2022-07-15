@@ -36,7 +36,7 @@ struct MainPackaging: View {
     @State var text = ""
     var body: some View {
         
-      //  NavigationView{
+      // NavigationView{
             ScrollView(.vertical) {
             ZStack{
               
@@ -234,13 +234,9 @@ struct MainPackaging: View {
                     }
                 }
                 }
-              
-//            .navigationTitle("packaging and boxes")
-          .navigationBarTitleDisplayMode(.automatic)
                 
-               
+            .navigationBarBackButtonHidden(true)
         }
-       // }
             }
     
     

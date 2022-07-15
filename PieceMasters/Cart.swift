@@ -7,12 +7,12 @@ struct Cart: View {
     @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         
-        NavigationView{
+       // NavigationView{
             ZStack {
                 Cart3D()
                 // product detailes
                 
-               
+                VStack{
                 HStack (spacing: 20){
                     ZStack{
                         KFImage(URL(string:Product.image))
@@ -92,10 +92,13 @@ struct Cart: View {
                     Text("\(Product.price) SR")
                         .foregroundColor(Color(red: 0.034, green: 0.06, blue: 0.279))
                     
+                }
                     
-                    
-                }   .padding(.top,-70)
-                .padding(.top, 220)
+                   .padding(.top,-70)
+//                .padding(.top, 220)
+                }
+                }
+                .padding(.top,100)
               
                     VStack{
                         NavigationLink(destination: LoginView()
@@ -111,14 +114,14 @@ struct Cart: View {
                                 .cornerRadius(10.0)
                         }
 
-                        NavigationLink(destination: AllProducts()
+                        NavigationLink(destination: MainPackaging()
                                        
                         ) {    Text("Continue shopping ")
                             
                                 .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
                                 .fontWeight(.bold)
                                 .padding(.vertical)
-                            //.padding(.horizontal, 100)
+                           
                                 .frame(width: 328 , height: 63 )
                             
                                 .background(.white)
@@ -127,14 +130,13 @@ struct Cart: View {
                                 .cornerRadius(3.0)
                         }
                     }
-                   
+                    .padding(.top,350)
 
-                } .padding( )
+                }
               
                 }
-                    }
+                   // }
 
-                }
                 }
     
 

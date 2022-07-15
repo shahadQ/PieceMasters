@@ -13,7 +13,7 @@ var body: some View {
     Rectangle()
         .fill(Color.white)
         .frame(width: 390
-               , height: 1040)
+               , height: 1000)
     
         .cornerRadius(20, corners: [.topLeft, .bottomRight])
         .padding(.top,300)

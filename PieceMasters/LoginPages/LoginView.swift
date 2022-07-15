@@ -75,7 +75,7 @@ struct LoginView_Previews: PreviewProvider {
                     viewModel.logInUser(email: email, password: password)
 
                 }) {
-                    Text("Sign In")
+                    Text("Sign in")
                         .foregroundColor(.white)
                         .fontWeight(.bold)
                         .padding(.vertical)
