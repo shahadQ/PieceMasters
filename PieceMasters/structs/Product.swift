@@ -31,7 +31,7 @@ struct product: Identifiable {
     var image: String
     var amount: String
 
-    var price: String
+    var price: NSNumber
     var offer : Int?
     var isSelected: Bool
 }

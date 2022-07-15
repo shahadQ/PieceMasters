@@ -35,7 +35,7 @@ class ViewModel: ObservableObject{
                                            image: d["image"] as? String ?? "",
                                            amount: d["amount"] as? String ?? "",
                                          
-                                           price: d["price"] as? String ?? "",
+                                           price: d["price"] as? NSNumber ?? 0,
                                            offer: d["offer"] as? Int ?? 0,
                                            isSelected: d["isSelected"] as? Bool ?? false
                                         )

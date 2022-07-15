@@ -30,7 +30,10 @@ struct ProductDetails: View {
     @State private var didTapGloss:Bool = false
     @State private var didTapMatt:Bool = false
     @State private var didTapContinueOrder:Bool = false
+    @State private var disabled = true
    @ObservedObject private var Productviewmodel = ViewModel()
+    var  BACGR1: Color = Color(red: 0.85, green: 0.85, blue: 0.85)
+
     var body: some View {
         
        // NavigationView {
@@ -492,14 +495,49 @@ struct ProductDetails: View {
                     })
                     
                     {
-                        Text("Continue Order")
+                        
+                        
+                        
+                        if didTapToBuyaProduct == false && didTapDesignPruduct ==  false || didTapSize4 == false && didTapSize8 == false && didTapSize12 == false  && didTapSize16 == false
+                            || didTapGloss == false    && didTapMatt == false  || TextFieldQuantities == ""
+                            
+                            
+                            
+                            
+                            {
+                            
+                            
+
+                            Button("Continue Order", action: {})
+                                .disabled(false)
+                                .padding()
+                                .padding(.horizontal)
+                                .background(BACGR1)
+                                .foregroundColor(.gray)
+                                .cornerRadius(10)
+
+                           }
+                        
+                        
+                        
+                        else{
+                         
+                            Button("Continue Order", action: {
+                                
+                                
+                            })
+                            .disabled(disabled)
                             .padding()
                             .padding(.horizontal)
                             .background(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
                             .cornerRadius(10.0)
                             .foregroundColor(Color.white)
-                           }
-                    
+                            
+                            
+                            
+                            
+                        }
+                    }
                    
                    
                    
@@ -554,7 +592,8 @@ struct ProductDetails: View {
 
 struct ProductDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetails(Product: product( id: "11", title: "cuup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "PAPER CUP",  price: "90", offer: 1, isSelected: false))
+        ProductDetails(Product: product( id: "11", title: "cuup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "PAPER CUP",  price: 90, offer: 1, isSelected: false))
     }
 }
+
 
