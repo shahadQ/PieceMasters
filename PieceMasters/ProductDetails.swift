@@ -33,6 +33,9 @@ struct ProductDetails: View {
     @State private var disabled = true
    @ObservedObject private var Productviewmodel = ViewModel()
     var  BACGR1: Color = Color(red: 0.85, green: 0.85, blue: 0.85)
+    
+    
+ 
 
     var body: some View {
         
@@ -451,10 +454,20 @@ struct ProductDetails: View {
                     VStack {
                         Text("Total Price :")
                             .foregroundColor(Color(red: 0.5098039215686274, green: 0.49411764705882355, blue: 0.49411764705882355))
-                         
-                        Text("\(Product.price)SR")
+                        if TextFieldQuantities == ""{
+                            Text("\(Product.price) SR")
+                                .font(.title)
+                                .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+                            
+                        }
+                        else{
+                           
+                           // Text("\(totalcal()) SR")
+
+                            Text("\(Productviewmodel.totalcal(item: Product, TextFieldQ: TextFieldQuantities)) SR")
                             .font(.title)
                             .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+                        }
                     }
                     Spacer()
                     NavigationLink(destination: {

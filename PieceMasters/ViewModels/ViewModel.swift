@@ -54,5 +54,12 @@ class ViewModel: ObservableObject{
         }
         
     }
+    func totalcal(item: product, TextFieldQ: String)-> String{
     
+        let total = ( Double(truncating: item.price) * (Double(TextFieldQ) ?? 0.0)) * ( 1 + 0.15 )
+          
+          let totalronded: String = String(format: "%.2f", total)
+          
+     return totalronded
+ }
 }
