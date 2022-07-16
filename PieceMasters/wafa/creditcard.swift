@@ -54,7 +54,7 @@ struct creditcard: View {
             VStack (alignment: .leading){
                 Text("Cardholder Name")
       .fontWeight(.bold)
-            TextField("Joel Mcloving", text: $CreditNumber)
+            TextField("Joel Mcloving", text: $CreditName)
                       .frame(width: 310, height: 17)
                       .padding()
                         .overlay(
@@ -78,7 +78,7 @@ struct creditcard: View {
           
             }
             HStack{
-                TextField("XX", text: $CreditNumber)
+                TextField("XX", text: $Expiredate)
                       .frame(width: 35, height: 17)
                       .padding()
                         .overlay(
@@ -86,7 +86,7 @@ struct creditcard: View {
                                 .stroke(.gray, lineWidth: 1))
                 
                 
-            TextField("XX", text: $CreditNumber)
+            TextField("XX", text: $Expiredate)
                 .frame(width: 35, height: 17)
                 .padding()
                   .overlay(
@@ -94,7 +94,7 @@ struct creditcard: View {
                           .stroke(.gray, lineWidth: 1))
                 
                 Spacer().frame(width: 120, height: 60)
-                TextField("XXXX", text: $CreditNumber)
+                TextField("XXXX", text: $CVVCode)
                           .frame(width: 45, height: 17)
                           .padding()
                             .overlay(
