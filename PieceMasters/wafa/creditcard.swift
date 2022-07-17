@@ -9,9 +9,13 @@ import SwiftUI
 
 struct creditcard: View {
     @State private var CreditNumber: String = ""
-    @State private var CreditName: String = ""
+    @State private var CreditNumber2: String = ""
+    @State private var CreditNumber3: String = ""
+    @State private var CreditNumber4: String = ""
+    @State private var CreditName2: String = ""
     @State private var Expiredate: String = ""
-    @State private var CVVCode: String = ""
+    @State private var Expiredate2: String = ""
+    @State private var CVVCode2: String = ""
     var body: some View {
         VStack{
             
@@ -29,19 +33,19 @@ struct creditcard: View {
                       RoundedRectangle(cornerRadius: 10)
                           .stroke(.gray, lineWidth: 1))
             
-            TextField("XXXX", text: $CreditNumber)
+            TextField("XXXX", text: $CreditNumber2)
                       .frame(width: 45, height: 17)
                       .padding()
                         .overlay(
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(.gray, lineWidth: 1))
-            TextField("XXXX", text: $CreditNumber)
+            TextField("XXXX", text: $CreditNumber3)
                       .frame(width: 45, height: 17)
                       .padding()
                         .overlay(
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(.gray, lineWidth: 1))
-            TextField("XXXX", text: $CreditNumber)
+            TextField("XXXX", text: $CreditNumber4)
                       .frame(width: 45, height: 17)
                       .padding()
                         .overlay(
@@ -54,7 +58,7 @@ struct creditcard: View {
             VStack (alignment: .leading){
                 Text("Cardholder Name")
       .fontWeight(.bold)
-            TextField("Joel Mcloving", text: $CreditNumber)
+            TextField("Joel Mcloving", text: $CreditName2)
                       .frame(width: 310, height: 17)
                       .padding()
                         .overlay(
@@ -78,7 +82,7 @@ struct creditcard: View {
           
             }
             HStack{
-                TextField("XX", text: $CreditNumber)
+                TextField("XX", text: $Expiredate)
                       .frame(width: 35, height: 17)
                       .padding()
                         .overlay(
@@ -86,7 +90,7 @@ struct creditcard: View {
                                 .stroke(.gray, lineWidth: 1))
                 
                 
-            TextField("XX", text: $CreditNumber)
+            TextField("XX", text: $Expiredate2)
                 .frame(width: 35, height: 17)
                 .padding()
                   .overlay(
@@ -94,7 +98,7 @@ struct creditcard: View {
                           .stroke(.gray, lineWidth: 1))
                 
                 Spacer().frame(width: 120, height: 60)
-                TextField("XXXX", text: $CreditNumber)
+                TextField("XXXX", text: $CVVCode2)
                           .frame(width: 45, height: 17)
                           .padding()
                             .overlay(

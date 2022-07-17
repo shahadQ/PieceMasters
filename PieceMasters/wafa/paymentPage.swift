@@ -16,7 +16,7 @@ struct paymentPage: View {
     
     
     var body: some View {
- NavigationView {
+// NavigationView {
  VStack{
  ZStack{
   backgroundRectangle()
@@ -290,7 +290,9 @@ struct paymentPage: View {
                 
             }
             .padding()
-            .navigationTitle("Checkout")}
+          //  .navigationTitle("Checkout")
+     
+// }
       
     }
 }

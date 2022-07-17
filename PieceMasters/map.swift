@@ -19,7 +19,7 @@ struct map: View {
 
 
 
-
+    var PrimaryColor : Color = (Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
 
 
 
@@ -33,8 +33,7 @@ struct map: View {
 
        NavigationView{
 
-
-
+      
 
 
            VStack{
@@ -116,7 +115,7 @@ HStack(spacing: -40) {
 
        .frame(width: 110)
 
-       .position(x: 60, y:-6 )
+       .position(x: 60, y:-15 )
 
    }
 
@@ -128,7 +127,7 @@ HStack(spacing: -40) {
 
      .frame(width:20 , height: 20 )
 
-    .position(x: 11, y:28)
+    .position(x: 9, y:15)
 
 
 
@@ -158,9 +157,9 @@ HStack(spacing: -40) {
 
            .frame(width: 390, height: 400)
 
-           .navigationTitle("Checkout")
-
-           .navigationBarTitleDisplayMode(.inline)
+//           .navigationTitle("Checkout")
+//
+//           .navigationBarTitleDisplayMode(.inline)
 
 
 
@@ -237,13 +236,38 @@ HStack(spacing: -40) {
 
 
 
+                       .navigationBarTitleDisplayMode(.large)
+                       .navigationBarItems(
+                        leading:
+                            
+                               Button(action: {
+                                   print("Button Pressed")
+                               })
+                        
+
+                        
+                        {
+                            NavigationLink(destination: Cart(Product: product( id: "11", title: "cuup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "PAPER CUP",  price: 90, offer: 1, isSelected: false))
+                            ){
+                                
+                                
+                            HStack{
+                             
+                            Image(systemName: "chevron.backward")
+                                Text("Back")
+                                
+                            }.foregroundColor(PrimaryColor).font(Font.body.bold())
+                           }
+                                           }
+                       )
 
 
-
+     
 
 
 
                }
+
 
            }
 
