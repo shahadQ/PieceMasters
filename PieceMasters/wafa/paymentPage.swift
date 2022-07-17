@@ -271,6 +271,7 @@ struct paymentPage: View {
                     else{
                         if UserPayment == 2
                         { buttonForOtherPayment()    .position(x: 190, y: 800)
+                          //  Confirmation()
                         }
                         else{
                             _applePay()

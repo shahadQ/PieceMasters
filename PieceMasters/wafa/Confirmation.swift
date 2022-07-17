@@ -58,7 +58,7 @@ struct Confirmation: View {
                 .fontWeight(.bold)
                 .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
                 .frame(width: 110)
-                .position(x: 50, y: 116)
+                .position(x: 50, y: 112)
         }
     VStack{
        
@@ -106,7 +106,7 @@ struct Confirmation: View {
                     
                    
                 }
-                .navigationTitle("Checkout")
+               // .navigationTitle("Checkout")
                 
     }
 

@@ -9,15 +9,30 @@ import SwiftUI
 
 struct buttonForOtherPayment: View {
     var body: some View {
-        Button(action: { }) {
-            Text("Complete order ")
-                .foregroundColor(Color.white)
-        }
-        .frame(width: 350, height: 65)
-        .background(Color(red: 0.225, green: 0.26, blue: 0.461))
-        .cornerRadius(10)
         
-    }
+        NavigationLink(destination: Confirmation()
+                       
+        ) {      Text("Complete order ")
+                .foregroundColor(.white)
+                .fontWeight(.bold)
+                .padding(.vertical)
+            //.padding(.horizontal, 100)
+                .frame(width: 328 , height: 63 )
+                .background(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+            
+                .cornerRadius(10.0)
+        }
+        
+        
+//        Button(action: { }) {
+//            Text("Complete order ")
+//                .foregroundColor(Color.white)
+//        }
+//        .frame(width: 350, height: 65)
+//        .background(Color(red: 0.225, green: 0.26, blue: 0.461))
+//        .cornerRadius(10)
+//
+  }
 }
 
 struct buttonForOtherPayment_Previews: PreviewProvider {
