@@ -129,13 +129,6 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		02FBF0D5286B25D90079FB5E /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		1684075128624D570071FC5F /* wafa */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				02FBF0D9286B2D630079FB5E /* ww.swift */,
-				02FBF0D5286B25D90079FB5E /* New Group */,
 				02FBF0D3286B21250079FB5E /* Splash.swift */,
 				77B170E02847452D001F9CBC /* PieceMasters */,
 				77B170DF2847452D001F9CBC /* Products */,
