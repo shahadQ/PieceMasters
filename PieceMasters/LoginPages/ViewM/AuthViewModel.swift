@@ -18,6 +18,9 @@ final class AuthViewModel:ObservableObject{
     @Published   var showingAlert: Bool = false
     @Published   var alertTitle: String = ""
 
+    init(){
+        checkIfUserLoggedIn()
+    }
     func fetchUser(){
         guard let uid = Auth.auth().currentUser?.uid  else {return}
         Firestore.firestore().collection(users).document(uid).getDocument { snapshot, _ in

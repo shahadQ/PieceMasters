@@ -104,18 +104,28 @@ struct Cart: View {
                 .padding(.top,100)
               
                     VStack{
-                        NavigationLink(destination: LoginView()
-                                       
-                        ) {    Text("Proceed to checkout")
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                                .padding(.vertical)
-                            //.padding(.horizontal, 100)
-                                .frame(width: 328 , height: 63 )
-                                .background(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+                        
+                        NavigationLink {
                             
-                                .cornerRadius(10.0)
+                            if viewModel.isAouthenticatting {
+                                map()
+                            }
+                            else {
+                                LoginView()
+                            }
+                        } label: {
+                            Text("Proceed to checkout")
+                                    .foregroundColor(.white)
+                                    .fontWeight(.bold)
+                                    .padding(.vertical)
+                                //.padding(.horizontal, 100)
+                                    .frame(width: 328 , height: 63 )
+                                    .background(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+                                
+                                    .cornerRadius(10.0)
+                          
                         }
+
 
                         NavigationLink(destination: MainPackaging()
                                        
@@ -136,11 +146,12 @@ struct Cart: View {
                     .padding(.top,350)
 
                 }
-              
+            .navigationBarBackButtonHidden(true)
                 }
                    // }
 
                 }
+    
     
 
 
