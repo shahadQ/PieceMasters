@@ -82,6 +82,7 @@ struct threeDModel: View {
                                     UIColor(selectedColor) :image
                                     
                                 }
+                                
                                 if shouldShowImagePicker == false{
                                     box1?.geometry?.firstMaterial?.diffuse.contents =  image
 

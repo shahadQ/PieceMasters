@@ -20,6 +20,7 @@ struct map: View {
 
 
     var PrimaryColor : Color = (Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+    var SecondaryColor: Color = (Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
 
 
 
@@ -183,9 +184,7 @@ HStack(spacing: -40) {
                    RoundedRectangle(cornerRadius: 20)
 
                               .inset(by: 10)
-
-                              .stroke(Color.black, lineWidth: 0.5)
-
+                              .stroke(SecondaryColor, lineWidth: 1)
                               .frame(width: 360, height: 80)
 
                    HStack{
@@ -232,7 +231,7 @@ HStack(spacing: -40) {
 
            }
 
-       }
+           }.padding(.top , -100)
 
 
 
