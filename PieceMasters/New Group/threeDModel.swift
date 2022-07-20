@@ -14,9 +14,7 @@ struct threeDModel: View {
     
     //disabled Button
     @State private var disabled = true
-    //Alert Button
-    
-    //
+    @State private var fileName = ""
 
     @State private var presentImporter = false
 
@@ -32,7 +30,7 @@ struct threeDModel: View {
     @State var shouldHide = false
     
     
-    let url = URL(string: "file:///private/var/mobile/Containers/Shared/AppGroup/7A776E3D-2295-422A-AE7F-9A2F95115FA8/File%20Provider%20Storage/download.pdf")
+
     var PrimaryColor : Color = (Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
     var SecondaryColor: Color = (Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
     var BACGR: Color = (Color(red: 0.9725490196078431, green: 0.9725490196078431, blue: 0.9725490196078431))
@@ -117,18 +115,18 @@ struct threeDModel: View {
                                     UIColor(selectedColor) :image
                                     
                                 }
-                                
-                                if shouldShowImagePicker == false{
-                                    box1?.geometry?.firstMaterial?.diffuse.contents =  image
-
-                                }
 
                                 if shouldShowImagePicker == false{
                                     box1?.geometry?.firstMaterial?.diffuse.contents =  image
 
                                 }
-                                
-                                
+
+                                if shouldShowImagePicker == false{
+                                    box1?.geometry?.firstMaterial?.diffuse.contents =  image
+
+                                }
+
+
                                 if box1?.geometry?.firstMaterial?.diffuse.contents == nil{
                                     box1?.geometry?.firstMaterial?.diffuse.contents = !isSelected ?
                                     UIColor(selectedColor) :selectedPicker
@@ -149,22 +147,22 @@ struct threeDModel: View {
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1, alignment: .center)
                         
                         //logo
-//                        VStack{
-//
-//                            if let image = self.image {
-//                                Image(uiImage: image)
-//                                    .resizable()
-//                                    .frame(width: 70, height: 70)
-//                                    .clipShape(Circle())
-//                                    .position(x: 205, y: 410)
-//                                    .cornerRadius(10)
-//                                    .foregroundColor(.white)
-//                                    .padding(.top ,-170)
-//
-//                            }
-//
-//
-//                        }
+                        VStack{
+
+                            if let image = self.image {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .frame(width: 70, height: 70)
+                                    .clipShape(Circle())
+                                    .position(x: 205, y: 410)
+                                    .cornerRadius(10)
+                                    .foregroundColor(.white)
+                                    .padding(.top ,-170)
+
+                            }
+
+
+                        }
                         
                         //-----------------------------------
                         
@@ -214,7 +212,6 @@ struct threeDModel: View {
                                     
                                     
                                     Text("click and drag to move design artwork").font(.system(size:13))
-                                    
                                         .foregroundColor(.gray)
                                         .padding(.trailing ,90)
                                     
@@ -350,12 +347,16 @@ struct threeDModel: View {
                             presentImporter = true
                         }) {
                             HStack {
+                                VStack{
                                 Text("Upload design ")
                                     .foregroundColor(SecondaryColor)
-                                
+                                Text(fileName)
+                                    .foregroundColor(.blue)
+                                    .font(.system(size: 12))
+                                }
                                 Image(systemName: "square.and.arrow.up")
                                     .foregroundColor(SecondaryColor)
-                                
+                            
                             }
                             .overlay(
                                 RoundedRectangle(cornerRadius: 10.0)
@@ -365,10 +366,16 @@ struct threeDModel: View {
                             )
                         }      .fileImporter(isPresented: $presentImporter, allowedContentTypes: [.pdf]) { result in
                             switch result {
+                        
                             case .success(let url):
                                 
                                 uploadFile(url: url)
                                 print(url)
+                                
+                            
+                                self.fileName =   url.lastPathComponent
+                    
+                                print(fileName)
                                 //use `url.startAccessingSecurityScopedResource()` if you are going to read the data
                             case .failure(let error):
                                 print(error)
@@ -378,7 +385,7 @@ struct threeDModel: View {
                         
                         
                         // THE FUNC CHECK IF ALL FILEDS IS SELECTED
-                        if selectedPicker == "" && selectedColor ==  Color(.systemBackground) && (image == nil) {
+                        if selectedPicker == "" && selectedColor ==  Color(.systemBackground) && (image == nil && fileName == "") {
                             
                             Button("Continue Order", action: {})
                             
