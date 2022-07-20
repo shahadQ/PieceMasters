@@ -127,8 +127,7 @@ struct paymentPage: View {
                                     RoundedRectangle(cornerRadius: 10)
                                         .foregroundColor(self.didTapCash ? Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157) : Color.white )
                                         .foregroundColor(self.didTapCash ? Color.white : Color(red: 0.5098039215686274, green: 0.49411764705882355, blue: 0.49411764705882355))
-                                        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-                                        .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+                                        .shadow(color: Color.gray.opacity(0.2), radius: 10, x: 10, y: 10)                                        .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
                                     
                                     
                                 )
@@ -156,21 +155,20 @@ struct paymentPage: View {
                                 .background(
                                     RoundedRectangle(cornerRadius: 10)  .foregroundColor(self.didTapApplePay ? Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157) : Color.white )
                                         .foregroundColor(self.didTapApplePay ? Color.white : Color(red: 0.5098039215686274, green: 0.49411764705882355, blue: 0.49411764705882355))
-                                        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-                                        .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+                                        .shadow(color: Color.gray.opacity(0.2), radius: 10, x: 10, y: 10)                                        .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
                                     
                                 )
                         }
                         Image(self.didTapApplePay ? "apple pay" : "apple pay" )
                         
                             .position(x: 80, y: 540)
-
+                        
                     }
                     
                 }
                 
                 
-                .position(x: 200, y: 400)
+                .position(x: 195, y: 400)
                 // .padding(.vertical)
                 
                 //
