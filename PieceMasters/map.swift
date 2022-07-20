@@ -190,6 +190,8 @@ HStack(spacing: -40) {
                    HStack{
 
                 Image ("map")
+                           .resizable()
+                           .frame(width: 27, height: 24)
 
               Text("2821 al azhari, 6290, An Nuzhah, Riyadh12471,Saudi Arabia")
 
