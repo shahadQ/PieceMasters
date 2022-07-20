@@ -351,8 +351,9 @@ struct threeDModel: View {
                                 Text("Upload design ")
                                     .foregroundColor(SecondaryColor)
                                 Text(fileName)
+                                        .frame(width: 60, height: 0)
                                     .foregroundColor(.blue)
-                                    .font(.system(size: 12))
+                                    .font(.system(size: 9.9))
                                 }
                                 Image(systemName: "square.and.arrow.up")
                                     .foregroundColor(SecondaryColor)

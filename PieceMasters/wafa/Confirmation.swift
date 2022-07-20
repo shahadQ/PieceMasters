@@ -12,7 +12,7 @@ struct Confirmation: View {
 
         var body: some View {
 
-            return  NavigationView {
+//            return  NavigationView {
                 
                 VStack(alignment: .center){
            
@@ -58,22 +58,22 @@ struct Confirmation: View {
                 .fontWeight(.bold)
                 .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
                 .frame(width: 110)
-                .position(x: 50, y: 112)
+                .position(x: 50, y: 90)
         }
     VStack{
        
             Circle()
             .fill(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4588235294117647))
             .frame(width:20 , height: 20 )
-            .position(x: 9, y: 150)
+            .position(x: -10, y: 125)
                             
             
         
     }
     }
-    .position(x: 190, y: 60)
-    .padding()
-
+    .position(x: 220, y: 40)
+ 
+                
                     VStack{
                 Image("Cnfirm")
                         .frame(width: 245.18, height: 196.57)
@@ -89,26 +89,28 @@ struct Confirmation: View {
                         .fontWeight(.light)
                         .foregroundColor(Color(red: 0.217, green: 0.252, blue: 0.449))
                         .multilineTextAlignment(.center)
+                        .frame(width: 300, height: 100)
                     }.position(x: 190, y: 0)
-                    
+                        .padding(.top, 80)
                     HStack{
-                        
-                        Button(action: { }) {
+                     
+//                        Button(action: { }) {
+                        NavigationLink(destination: MainPackaging()){
                             Text("Continue shopping ")
                                 .foregroundColor(Color.white)
                         }
-                        .frame(width: 289, height: 50)
+                        .frame(width: 340, height: 65)
                         .background(Color(red: 0.225, green: 0.26, blue: 0.461))
                         .cornerRadius(10)
                      
                   
-                        }
+                        }.position(x: 190, y: 85)
                     
-                   
-                }
+                    
+                }.padding(.top ,-60)
                // .navigationTitle("Checkout")
                 
-    }
+//    }
 
     }
 
