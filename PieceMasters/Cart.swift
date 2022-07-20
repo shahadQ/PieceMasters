@@ -2,20 +2,21 @@
 import SwiftUI
 import Kingfisher
 struct Cart: View {
-    var Product:product
+   // var Product:product
     @EnvironmentObject var viewModel: AuthViewModel
     var SecondaryColor: Color = (Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
     var body: some View {
-        
+      
        // NavigationView{
             ZStack {
                 Cart3D()
                 // product detailes
                 
                 VStack{
+                    ForEach(ViewModel.shared.cartItems){ ietm in
                 HStack (spacing: 20){
                     ZStack{
-                        KFImage(URL(string:Product.image))
+                        KFImage(URL(string:ietm.products.image))
                             .resizable()
                             .frame(width: 80, height: 86.56)
                          
@@ -23,9 +24,9 @@ struct Cart: View {
                      //   .resizable()
                     }.padding(.leading ,20)
                     VStack(alignment: .leading){
-                        Text(Product.title)
+                        Text(ietm.products.title)
                             .bold()
-                        Text(Product.amount)
+                        Text(ietm.products.amount)
                            .font(.system(size:13))
                          
                             .foregroundColor(Color.gray)
@@ -37,7 +38,7 @@ struct Cart: View {
 
                 .padding(.top,-230)
                 .padding(.trailing,200)
-                
+                    }
                 Divider()
                     .padding(.horizontal)
                     .padding(.top,-260)
@@ -162,7 +163,7 @@ struct Cart: View {
 
 struct Cart_Previews: PreviewProvider {
     static var previews: some View {
-       Cart(Product: product( id: "11", title: "cuup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "PAPER CUP",  price: 90, offer: 1, isSelected: false))
+       Cart()
             .environmentObject(AuthViewModel())
     }
 }

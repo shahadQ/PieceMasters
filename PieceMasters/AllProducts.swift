@@ -42,7 +42,7 @@ struct ProductView: View {
 //    var categoryIndexzx : Int
     var columns = Array(repeating: GridItem(.flexible()), count: 2)
     var categories = ["All", "Cups", "Boxes", "Bags"]
-    @ObservedObject private var Productviewmodel = ViewModel()
+    @ObservedObject private var Productviewmodel = ViewModel.shared
     @State var categoryIndexzx : Int
     @State var text = ""
     @State var filterData : [product] = []

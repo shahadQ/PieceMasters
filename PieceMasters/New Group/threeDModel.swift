@@ -3,7 +3,8 @@
 
 import SwiftUI
 import SceneKit
-
+import FirebaseAuth
+import FirebaseStorage
 struct threeDModel: View {
     @State var shouldShowImagePicker = false
     @State var image: UIImage?
@@ -37,7 +38,41 @@ struct threeDModel: View {
     var BACGR: Color = (Color(red: 0.9725490196078431, green: 0.9725490196078431, blue: 0.9725490196078431))
     var  BACGR1: Color = Color(red: 0.85, green: 0.85, blue: 0.85)
     
-   
+    
+    func uploadFile(url:URL) {
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        guard let imageData = try? Data(contentsOf: url) else {return}
+        
+        let randomID = UUID().uuidString
+        let uploadRef = Storage.storage().reference(withPath: "\(uid)/\(randomID).pdf")
+        let uploadMetadata = StorageMetadata()
+        uploadMetadata.contentType = "application/pdf"
+        
+        let taskRef = uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
+            if let err = error {
+                print("\(err)")
+                return
+            }
+            
+            print("downloadMetadata: \(String(describing: downloadMetadata))")
+            
+            
+            uploadRef.downloadURL { url, error in
+                if let err = error {
+                    print("\(err)")
+                    return
+                }
+                print("url \(String(describing: url))")
+            }
+        }
+        
+        taskRef.observe(.progress) { snapshot in
+            guard let progress = snapshot.progress?.fractionCompleted else { return }
+            print("progress: \(progress)")
+          //  progressValue = progress
+        }
+        
+    }
     
     var body: some View {
         
@@ -332,6 +367,7 @@ struct threeDModel: View {
                             switch result {
                             case .success(let url):
                                 
+                                uploadFile(url: url)
                                 print(url)
                                 //use `url.startAccessingSecurityScopedResource()` if you are going to read the data
                             case .failure(let error):

@@ -10,6 +10,7 @@ import Firebase
 
 class ViewModel: ObservableObject{
     
+    static let shared  = ViewModel()
     @Published var list = [product]()
     @Published var filtered : [product] = []
 
@@ -70,32 +71,33 @@ class ViewModel: ObservableObject{
     
        
        
-       
-       //ADD TO CART
-       func addToCart(item: product){
-         //  self.filtered[getFilteredIndex(item: item, isCartIndex: false)].isSelected = !item.isSelected
 
-           self.list[getIndex(item: item, isCartIndex: false)].isSelected = !item.isSelected
-           
-           let filterIndex = self.filtered.firstIndex{ (item1) -> Bool in
-               return item.id == item1.id
-               
-           } ?? 0
-           
-           self.filtered[filterIndex].isSelected = !item.isSelected
-           
-           
-           if item.isSelected{
-               
-               self.cartItems.remove(at: getIndex(item: item, isCartIndex: true))
-               return
-           }
-           
-           self.cartItems.append(cart(products: item, Quantity: 1))
-       }
-       
-       
-       
+       //ADD TO CART
+       func addToCart(item: cart){
+           self.cartItems.append(item)
+         //  self.filtered[getFilteredIndex(item: item, isCartIndex: false)].isSelected = !item.isSelected
+//           if getIndex(item: item, isCartIndex: false) < self.list.count{
+//           self.list[getIndex(item: item, isCartIndex: false)].isSelected = !item.isSelected
+//           }
+//           let filterIndex = self.filtered.firstIndex{ (item1) -> Bool in
+//               return item.id == item1.id
+//
+//           } ?? 0
+//
+//           self.filtered[filterIndex].isSelected = !item.isSelected
+//
+//
+//           if item.isSelected{
+//
+//               self.cartItems.remove(at: getIndex(item: item, isCartIndex: true))
+//               return
+//           }
+//
+//           self.cartItems.append(cart(products: item, Quantity: 1))
+      }
+
+
+
 
        func getIndex(item: product,isCartIndex: Bool)->Int{
 
@@ -132,10 +134,15 @@ class ViewModel: ObservableObject{
        func updateOrder(){
           
            let db = Firestore.firestore()
-           
+           guard let uid = Auth.auth().currentUser?.uid else {
+               return
+               
+               
+           }
            if ordered{
                ordered = false
-               db.collection("Users").document(Auth.auth().currentUser!.uid).delete{
+               db.collection("Users").document(uid).delete{
+                   
                    (err) in
                    if err != nil{
                        self.ordered = true
@@ -153,7 +160,7 @@ class ViewModel: ObservableObject{
                ])
            }
            ordered = true
-           db.collection("Users").document(Auth.auth().currentUser!.uid).setData([
+           db.collection("Users").document(uid).setData([
                "orderd_food": details,
                //"total_cost": calculateTotalPrice()
               // "location": GeoPoint(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)

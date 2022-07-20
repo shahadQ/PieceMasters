@@ -31,7 +31,7 @@ struct ProductDetails: View {
     @State private var didTapMatt:Bool = false
     @State private var didTapContinueOrder:Bool = false
     @State private var disabled = true
-   @ObservedObject private var Productviewmodel = ViewModel()
+    @ObservedObject private var Productviewmodel = ViewModel.shared
     var  BACGR1: Color = Color(red: 0.85, green: 0.85, blue: 0.85)
     
     
@@ -473,7 +473,7 @@ struct ProductDetails: View {
                     NavigationLink(destination: {
                         
                         if self.didTapToBuyaProduct == true{
-                      Cart(Product:Product)
+                      Cart()
                             
                             
                         
