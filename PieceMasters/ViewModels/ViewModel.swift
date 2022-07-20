@@ -11,6 +11,10 @@ import Firebase
 class ViewModel: ObservableObject{
     
     @Published var list = [product]()
+    @Published var filtered : [product] = []
+
+     @Published var cartItems : [cart] = []
+     @Published var ordered = false
     
     func getData(){
         
@@ -62,4 +66,108 @@ class ViewModel: ObservableObject{
           
      return totalronded
  }
+    
+    
+       
+       
+       
+       //ADD TO CART
+       func addToCart(item: product){
+         //  self.filtered[getFilteredIndex(item: item, isCartIndex: false)].isSelected = !item.isSelected
+
+           self.list[getIndex(item: item, isCartIndex: false)].isSelected = !item.isSelected
+           
+           let filterIndex = self.filtered.firstIndex{ (item1) -> Bool in
+               return item.id == item1.id
+               
+           } ?? 0
+           
+           self.filtered[filterIndex].isSelected = !item.isSelected
+           
+           
+           if item.isSelected{
+               
+               self.cartItems.remove(at: getIndex(item: item, isCartIndex: true))
+               return
+           }
+           
+           self.cartItems.append(cart(products: item, Quantity: 1))
+       }
+       
+       
+       
+
+       func getIndex(item: product,isCartIndex: Bool)->Int{
+
+           let index = self.list.firstIndex{ (item1) -> Bool in
+               return item.id == item1.id
+           } ?? 0
+           let CartIndex = self.cartItems.firstIndex{ (item1) -> Bool in
+               return item.id == item1.products.id
+           } ?? 0
+
+           return isCartIndex ? CartIndex : index
+       }
+
+       
+       
+       
+       //from coments
+   //    func getFilteredIndex(item: product, isCartIndex: Bool)-> Int{
+   //
+   //    let filteredIndex = self.filtered.firstIndex{ (item1) -> Bool in
+   //        return item.id == item1.id
+   //    } ?? 0
+   //
+   //    let cartIndex = self.cartItems.firstIndex { (item1) -> Bool in
+   //        return item.id == item1.id
+   //    } ?? 0
+   //
+   //    return isCartIndex ? cartIndex : filteredIndex
+   //}
+   //
+       
+
+       
+       func updateOrder(){
+          
+           let db = Firestore.firestore()
+           
+           if ordered{
+               ordered = false
+               db.collection("Users").document(Auth.auth().currentUser!.uid).delete{
+                   (err) in
+                   if err != nil{
+                       self.ordered = true
+                   }
+               }
+           }
+           
+           var details : [[String: Any]] = [[:]]
+           
+           cartItems.forEach{ (cart) in
+               details.append([
+                   "item_name": cart.products.title,
+                   "item_quantity": cart.Quantity,
+                   "item_cost": cart.products.price
+               ])
+           }
+           ordered = true
+           db.collection("Users").document(Auth.auth().currentUser!.uid).setData([
+               "orderd_food": details,
+               //"total_cost": calculateTotalPrice()
+              // "location": GeoPoint(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+           
+           ]){ (err) in
+               
+               if err != nil{
+                   self.ordered = false
+                   return
+               }
+               print("succses")
+           }
+       }
+       
+
+    
 }
