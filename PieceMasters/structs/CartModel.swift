@@ -16,4 +16,12 @@ struct cart: Identifiable {
     var Cardboard : String
     var size : String
     var url : String
+    
+    var locations : String
+    var createdAt : Date
+    var orderStatus : Int
+    var orderType : Int
+   
+    
+    
 }
