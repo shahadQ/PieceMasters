@@ -13,10 +13,11 @@ struct Cart: View {
                 // product detailes
                 
                 VStack{
-                    ForEach(ViewModel.shared.cartItems){ ietm in
+                   
                 HStack (spacing: 20){
+                    ForEach(ViewModel.shared.cartItems){ item in
                     ZStack{
-                        KFImage(URL(string:ietm.products.image))
+                        KFImage(URL(string:item.products.image))
                             .resizable()
                             .frame(width: 80, height: 86.56)
                          
@@ -24,9 +25,9 @@ struct Cart: View {
                      //   .resizable()
                     }.padding(.leading ,20)
                     VStack(alignment: .leading){
-                        Text(ietm.products.title)
+                        Text(item.products.title)
                             .bold()
-                        Text(ietm.products.amount)
+                        Text(item.products.amount)
                            .font(.system(size:13))
                          
                             .foregroundColor(Color.gray)

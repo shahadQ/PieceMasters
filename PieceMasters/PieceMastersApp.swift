@@ -20,6 +20,7 @@ struct PieceMastersApp: App {
             Splash()
                 .environmentObject(registrationViewModel)
                       .environmentObject(AuthViewModel.shared)
+                      .preferredColorScheme(.light)
             
         }
          
