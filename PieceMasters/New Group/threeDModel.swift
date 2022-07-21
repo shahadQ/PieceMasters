@@ -98,39 +98,39 @@ struct threeDModel: View {
 //                                let box1 = scene.rootNode.childNode(withName: "sphere", recursively: true)
                                 let box = scene.rootNode.childNode(withName: "Object_0", recursively: true)
                                 let box1 = scene.rootNode.childNode(withName: "logo", recursively: true)
-
+                                box1?.isHidden = image == nil
 //
 //-------------------------------------------------------------------------------------------------
 
                                 if isSelected1 == true{
                                     box?.geometry?.firstMaterial?.diffuse.contents = !isSelected ?
                                     UIColor(selectedColor) :selectedPicker
-                                    box1?.geometry?.firstMaterial?.diffuse.contents =  image
+                                    box1?.geometry?.firstMaterial?.diffuse.contents =  image?.resizeImage(targetSize: CGSize(width: 100, height: 100))
                                 }
 //
                                 if isSelected1 == false{
                                     box?.geometry?.firstMaterial?.diffuse.contents = !isSelected ?
                                     UIColor(selectedColor) :selectedPicker
                                     box1?.geometry?.firstMaterial?.diffuse.contents = !isSelected ?
-                                    UIColor(selectedColor) :image
+                                    UIColor(selectedColor) : image?.resizeImage(targetSize: CGSize(width: 100, height: 100 ))
                                     
                                 }
-
-                                if shouldShowImagePicker == false{
-                                    box1?.geometry?.firstMaterial?.diffuse.contents =  image
-
-                                }
-
-                                if shouldShowImagePicker == false{
-                                    box1?.geometry?.firstMaterial?.diffuse.contents =  image
-
-                                }
-
-
-                                if box1?.geometry?.firstMaterial?.diffuse.contents == nil{
-                                    box1?.geometry?.firstMaterial?.diffuse.contents = !isSelected ?
-                                    UIColor(selectedColor) :selectedPicker
-                                }
+//
+//                                if shouldShowImagePicker == false{
+//                                    box1?.geometry?.firstMaterial?.diffuse.contents =  image
+//
+//                                }
+//
+//                                if shouldShowImagePicker == false{
+//                                    box1?.geometry?.firstMaterial?.diffuse.contents =  image
+//
+//                                }
+//
+//
+//                                if box1?.geometry?.firstMaterial?.diffuse.contents == nil{
+//                                    box1?.geometry?.firstMaterial?.diffuse.contents = !isSelected ?
+//                                    UIColor(selectedColor) :selectedPicker
+//                                }
 
                                 
                                 
@@ -147,22 +147,22 @@ struct threeDModel: View {
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/1, alignment: .center)
                         
                         //logo
-                        VStack{
-
-                            if let image = self.image {
-                                Image(uiImage: image)
-                                    .resizable()
-                                    .frame(width: 70, height: 70)
-                                    .clipShape(Circle())
-                                    .position(x: 205, y: 410)
-                                    .cornerRadius(10)
-                                    .foregroundColor(.white)
-                                    .padding(.top ,-170)
-
-                            }
-
-
-                        }
+//                        VStack{
+//
+//                            if let image = self.image {
+//                                Image(uiImage: image)
+//                                    .resizable()
+//                                    .frame(width: 70, height: 70)
+//                                    .clipShape(Circle())
+//                                    .position(x: 205, y: 410)
+//                                    .cornerRadius(10)
+//                                    .foregroundColor(.white)
+//                                    .padding(.top ,-170)
+//
+//                            }
+//
+//
+//                        }
                         
                         //-----------------------------------
                         
@@ -523,6 +523,22 @@ struct threeDModel: View {
 }
 
 
+extension UIImage {
+    func resizeImage(targetSize: CGSize) -> UIImage {
+        let size = self.size
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        let newSize = widthRatio > heightRatio ?  CGSize(width: size.width * heightRatio, height: size.height * heightRatio) : CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        self.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+}
 
 
 

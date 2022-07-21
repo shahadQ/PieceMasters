@@ -35,6 +35,29 @@ struct ProductDetails: View {
     var  BACGR1: Color = Color(red: 0.85, green: 0.85, blue: 0.85)
     
     
+    func addToCart(){
+        
+        let quantity = Int(TextFieldQuantities) ?? 0
+        
+        var cardboard = ""
+        if didTapGloss == true {
+            cardboard = "Gloss"
+        }else if didTapMatt == true {
+            cardboard = "Matt"
+        }
+        
+//        
+//        let newcart = cart(products: Product,
+//                           Quantity: quantity,
+//                           Cardboard: cardboard,
+//                           size: <#T##String#>,
+//                           url: <#T##String#>,
+//                           locations: "",
+//                           createdAt: <#T##Date#>,
+//                           orderStatus: <#T##Int#>,
+//                           orderType: <#T##Int#>)
+//        Productviewmodel.addToCart(item: newcart)
+    }
  
 
     var body: some View {
@@ -536,6 +559,11 @@ struct ProductDetails: View {
                         else{
                          
                             Button("Continue Order", action: {
+                                
+                                
+                                
+                                
+                                //Productviewmodel.addToCart(item: <#T##cart#>)
                                 
                                 
                             })

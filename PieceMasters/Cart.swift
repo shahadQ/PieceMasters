@@ -13,9 +13,9 @@ struct Cart: View {
                 // product detailes
                 
                 VStack{
-                   
-                HStack (spacing: 20){
                     ForEach(ViewModel.shared.cartItems){ item in
+                HStack (spacing: 20){
+                 
                     ZStack{
                         KFImage(URL(string:item.products.image))
                             .resizable()
