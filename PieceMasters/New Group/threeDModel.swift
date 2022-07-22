@@ -98,39 +98,41 @@ struct threeDModel: View {
 //                                let box1 = scene.rootNode.childNode(withName: "sphere", recursively: true)
                                 let box = scene.rootNode.childNode(withName: "Object_0", recursively: true)
                                 let box1 = scene.rootNode.childNode(withName: "logo", recursively: true)
-                                box1?.isHidden = image == nil
+                                box1?.isHidden = true //image == nil
 //
 //-------------------------------------------------------------------------------------------------
 
+                                
+                            let size = CGSize(width: 100, height: 100)
+                                
+                                
                                 if isSelected1 == true{
                                     box?.geometry?.firstMaterial?.diffuse.contents = !isSelected ?
                                     UIColor(selectedColor) :selectedPicker
-                                    box1?.geometry?.firstMaterial?.diffuse.contents =  image?.resizeImage(targetSize: CGSize(width: 100, height: 100))
+                                    box1?.geometry?.firstMaterial?.diffuse.contents =  image?.resizeImage(targetSize: size)
                                 }
 //
                                 if isSelected1 == false{
                                     box?.geometry?.firstMaterial?.diffuse.contents = !isSelected ?
                                     UIColor(selectedColor) :selectedPicker
-                                    box1?.geometry?.firstMaterial?.diffuse.contents = !isSelected ?
-                                    UIColor(selectedColor) : image?.resizeImage(targetSize: CGSize(width: 100, height: 100 ))
+//                                    box1?.geometry?.firstMaterial?.diffuse.contents = !isSelected ?
+//                                    UIColor(selectedColor) : image?.resizeImage(targetSize: size)
                                     
                                 }
-//
-//                                if shouldShowImagePicker == false{
-//                                    box1?.geometry?.firstMaterial?.diffuse.contents =  image
-//
-//                                }
-//
-//                                if shouldShowImagePicker == false{
-//                                    box1?.geometry?.firstMaterial?.diffuse.contents =  image
-//
-//                                }
-//
-//
-//                                if box1?.geometry?.firstMaterial?.diffuse.contents == nil{
-//                                    box1?.geometry?.firstMaterial?.diffuse.contents = !isSelected ?
-//                                    UIColor(selectedColor) :selectedPicker
-//                                }
+
+
+
+                            
+                                if let image = image {
+                                    let plainNode = SCNPlane(width: 0.4, height: 0.5)
+                                    let node = SCNNode(geometry: plainNode)
+
+                                    plainNode.firstMaterial?.diffuse.contents = image.resizeImage(targetSize: size).makeRoundImg()
+                                    box?.addChildNode(node)
+                                    node.position = SCNVector3(0, 0.7 , 0.384)
+                                    node.pivot = SCNMatrix4MakeTranslation(0, 0.2, 0)
+                                }
+
 
                                 
                                 
@@ -525,18 +527,34 @@ struct threeDModel: View {
 
 extension UIImage {
     func resizeImage(targetSize: CGSize) -> UIImage {
-        let size = self.size
-        let widthRatio  = targetSize.width  / size.width
-        let heightRatio = targetSize.height / size.height
-        let newSize = widthRatio > heightRatio ?  CGSize(width: size.width * heightRatio, height: size.height * heightRatio) : CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
-        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+//        let size = self.size
+//        let widthRatio  = targetSize.width  / size.width
+//        let heightRatio = targetSize.height / size.height
+        let newSize = targetSize
+//        widthRatio > heightRatio ?  CGSize(width: size.width * heightRatio, height: size.height * heightRatio) : CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.width)
         
         UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
         self.draw(in: rect)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return newImage!
+        return newImage ?? UIImage()
+    }
+    
+    func makeRoundImg() -> UIImage {
+        let imgLayer = CALayer()
+        imgLayer.frame = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
+        imgLayer.contents = self.cgImage
+        imgLayer.masksToBounds = true
+
+        imgLayer.cornerRadius = self.size.width / 2
+
+        UIGraphicsBeginImageContext(self.size)
+        imgLayer.render(in: UIGraphicsGetCurrentContext()!)
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return roundedImage ?? UIImage()
     }
 }
 

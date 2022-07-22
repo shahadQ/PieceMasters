@@ -104,7 +104,7 @@ struct Confirmation: View {
                         .cornerRadius(10)
                      
                   
-                        }.position(x: 190, y: 85)
+                        }.position(x: 195, y: 85)
                     
                     
                 }.padding(.top ,-60)

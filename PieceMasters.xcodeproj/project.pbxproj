@@ -13,6 +13,7 @@
 		02760D832861B73500E2AF3E /* MyPatternPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02760D822861B73500E2AF3E /* MyPatternPicker.swift */; };
 		02760D852861B83100E2AF3E /* tab bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02760D842861B83100E2AF3E /* tab bar.swift */; };
 		02760D872861BE0400E2AF3E /* Product1.scn in Resources */ = {isa = PBXBuildFile; fileRef = 02760D862861BE0400E2AF3E /* Product1.scn */; };
+		029B601628896210002DC886 /* tinker.obj in Resources */ = {isa = PBXBuildFile; fileRef = 029B601528896210002DC886 /* tinker.obj */; };
 		02FBF0D4286B21250079FB5E /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FBF0D3286B21250079FB5E /* Splash.swift */; };
 		02FBF0DA286B2D630079FB5E /* ww.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FBF0D9286B2D630079FB5E /* ww.swift */; };
 		02FBF0DD286B376B0079FB5E /* Cart3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FBF0DC286B376B0079FB5E /* Cart3D.swift */; };
@@ -62,6 +63,7 @@
 		02760D822861B73500E2AF3E /* MyPatternPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPatternPicker.swift; sourceTree = "<group>"; };
 		02760D842861B83100E2AF3E /* tab bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tab bar.swift"; sourceTree = "<group>"; };
 		02760D862861BE0400E2AF3E /* Product1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Product1.scn; sourceTree = "<group>"; };
+		029B601528896210002DC886 /* tinker.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tinker.obj; sourceTree = "<group>"; };
 		02FBF0D3286B21250079FB5E /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		02FBF0D9286B2D630079FB5E /* ww.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ww.swift; sourceTree = "<group>"; };
 		02FBF0DC286B376B0079FB5E /* Cart3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart3D.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				777B929428610051008AE921 /* threeDModel.swift */,
 				02760D842861B83100E2AF3E /* tab bar.swift */,
 				02760D862861BE0400E2AF3E /* Product1.scn */,
+				029B601528896210002DC886 /* tinker.obj */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				02760D872861BE0400E2AF3E /* Product1.scn in Resources */,
 				77B170E92847452E001F9CBC /* Preview Assets.xcassets in Resources */,
 				77B170E62847452E001F9CBC /* Assets.xcassets in Resources */,
+				029B601628896210002DC886 /* tinker.obj in Resources */,
 				77B1710E284BD07B001F9CBC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,7 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PieceMasters/Preview Content\"";
-				DEVELOPMENT_TEAM = 99WH92J3A8;
+				DEVELOPMENT_TEAM = 5JQU78DCG7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PieceMasters/Info.plist;
@@ -518,7 +522,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PieceMasters/Preview Content\"";
-				DEVELOPMENT_TEAM = 99WH92J3A8;
+				DEVELOPMENT_TEAM = 5JQU78DCG7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PieceMasters/Info.plist;
