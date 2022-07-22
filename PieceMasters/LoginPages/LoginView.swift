@@ -42,10 +42,10 @@ struct LoginView_Previews: PreviewProvider {
                     .padding(.top,-180)
             
                     HStack(spacing: 25){
-                        Image(systemName: "envelope.fill")
+                        Image(systemName: "envelope")
                             .resizable()
-                            .frame(width: 19 ,height: 21)
-                            .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+                            .frame(width: 25 ,height: 25)
+                            .foregroundColor(Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
                             .padding(.leading,28)
                         TextField("Email Address", text: $email)
                     }
@@ -54,13 +54,13 @@ struct LoginView_Previews: PreviewProvider {
                 .padding(.horizontal)
                 .padding(.top, -15)
                 HStack(){
-                    Image( "lock")
+                    Image( systemName: "lock")
                         .resizable()
                         .frame(width: 25 ,height: 25)
-                        .foregroundColor(Color(red: 1.0, green: 0.0, blue: 0.0))
-                        .padding(.leading,25)
+                        .foregroundColor(Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
+                        .padding(.leading,28)
                     SecureField("Password", text: $password)
-                        .padding(.leading,15)
+                        .padding(.leading,20)
                     
                 }
                 Divider()
@@ -118,6 +118,7 @@ HStack {
                     Text (" Don't have an account ?")
         .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
                         Text("Sign up")
+        .foregroundColor(Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
                     }
                 }
                 .padding(.top,10)
@@ -156,7 +157,7 @@ struct ForgetPassView:  View {
                     .onTapGesture {
                         x()
                     }
-                    .foregroundColor(Color(red: 0.22, green: 0.26, blue: 0.478))
+                    .foregroundColor(Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
             }
         }
         .padding(.horizontal)

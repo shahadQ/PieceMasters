@@ -45,7 +45,7 @@ struct MainPackaging: View {
                     .ignoresSafeArea()
             VStack{
                 
-                Text("packaging and boxes").font(.system(size: 23).bold())
+                Text("Packaging and Boxes").font(.system(size: 23).bold())
                     .padding(.top ,-50)
                     .foregroundColor(Color(red: 0.22, green: 0.26, blue: 0.478))
                     

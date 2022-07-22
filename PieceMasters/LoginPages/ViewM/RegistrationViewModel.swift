@@ -54,7 +54,7 @@ final class  RegistrationViewModel : ObservableObject{
             }
            
             else{
-                self.showAlert("Successfully created user \( result?.user.uid ?? "")")
+                self.showAlert("Successfully created user ")
 
                 print("Successfully created user \( result?.user.uid ?? "")")
                 var userData : [String:String] = [

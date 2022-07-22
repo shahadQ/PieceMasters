@@ -29,10 +29,10 @@ struct RegistrationView: View {
             Group{
              
                 HStack(spacing: 15){
-                    Image(systemName: "person.fill")
+                    Image(systemName: "person")
                         .resizable()
                         .frame(width: 19 ,height: 21)
-                        .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+                        .foregroundColor(Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
                     .padding(.leading,10)
                     TextField("First Name", text: $registrationViewModel.firstName) }
                 .padding(.horizontal)
@@ -40,10 +40,10 @@ struct RegistrationView: View {
                 Divider()
         .padding(.horizontal)
                 HStack(spacing: 15){
-                    Image(systemName: "person.fill")
+                    Image(systemName: "person")
                         .resizable()
                         .frame(width: 19 ,height: 21)
-                        .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+                        .foregroundColor(Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
                     .padding(.leading,10)
                     TextField("Last Name", text: $registrationViewModel.lastName)
                                  }
@@ -55,23 +55,29 @@ struct RegistrationView: View {
                     Image(systemName: "envelope.fill")
                         .resizable()
                         .frame(width: 19 ,height: 21)
-                        .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+                        .foregroundColor(Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
                     .padding(.leading,10)
                     TextField("Email Address", text: $registrationViewModel.email)
                                  }
                 .padding(.horizontal)
+                
                 Divider()
+                    .padding(.horizontal)
 
                 HStack(){
-                    Image( "lock")
+                    Image( systemName: "lock")
+
                         .resizable()
                         .frame(width: 24 ,height: 25)
-                        .foregroundColor(Color(red: 1.0, green: 0.0, blue: 0.0))
+                        .foregroundColor(Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
                         .padding(.leading,25)
                     SecureField("Password", text: $registrationViewModel.password)
+                        .padding(.leading,3)
+                       
                      
                     
                 }
+                
                 Divider()
                     .padding(.horizontal)
                     //.padding(.top, 10)
