@@ -131,6 +131,7 @@ struct threeDModel: View {
                                     box?.addChildNode(node)
                                     node.position = SCNVector3(0, 0.7 , 0.384)
                                     node.pivot = SCNMatrix4MakeTranslation(0, 0.2, 0)
+                                    
                                 }
 
 

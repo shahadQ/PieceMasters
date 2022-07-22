@@ -20,6 +20,8 @@ struct ProductDetails: View {
     //private var numberOfimages = 2
    @State var names = 0
     @State var TextFieldQuantities: String = ""
+    @State private var  checkAmount = 0.0
+    @FocusState private var amountFocus: Bool
     @State var isPlaying : Bool = false
     @State private var didTapToBuyaProduct:Bool = false
     @State private var didTapDesignPruduct:Bool = false
@@ -46,7 +48,7 @@ struct ProductDetails: View {
             cardboard = "Matt"
         }
         
-//        
+//
 //        let newcart = cart(products: Product,
 //                           Quantity: quantity,
 //                           Cardboard: cardboard,
@@ -203,9 +205,25 @@ struct ProductDetails: View {
                         //  Spacer()
                            
                         VStack(alignment: .leading ){
+                          
                             TextField("Enter your Quantities", text: $TextFieldQuantities)
-                                .submitLabel(.done)
                                 .font(.system(size: 12))
+                                .keyboardType(.decimalPad)
+                                .focused($amountFocus)
+                            
+                           
+                                .toolbar{
+                                    
+                                    ToolbarItemGroup(placement: .keyboard){
+                                        Button("Done"){
+                                            amountFocus = false
+                                            
+                                        }.padding(.leading,270)
+                                        
+                                    }
+                                }
+                                
+                            
                              
                        // .textFieldStyle(RoundedBorderTextFieldStyle())
                            
@@ -636,5 +654,8 @@ struct ProductDetails_Previews: PreviewProvider {
         ProductDetails(Product: product( id: "11", title: "cuup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "PAPER CUP",  price: 90, offer: 1, isSelected: false))
     }
 }
+
+
+
 
 
