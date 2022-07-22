@@ -71,9 +71,9 @@ struct ProductView: View {
                     
                 }
                 Text("Browse by category")
-                    .padding(.top, 40)
+                    
                     .foregroundColor(Color(red: 0.42, green: 0.416, blue: 0.42))
-                
+                    .padding(.leading)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 30){
@@ -90,6 +90,7 @@ struct ProductView: View {
                     Text("Products")
                         
                 }
+                .padding(.leading)
                 .foregroundColor(Color(red: 0.22, green: 0.26, blue: 0.478))
                 // case1
                 if searchQuery == ""{
@@ -111,8 +112,8 @@ struct ProductView: View {
 
                                 }){
                                     HStack{
-                                        Image(systemName: product.isSelected ? "bookmark.fill": "bookmark")
-                                        
+                                        Image(systemName:"bookmark")
+                                            .background(.white)
                                             .foregroundColor(Color(red: 0.5, green: 0.8, blue: 0.736))
                                     }
                                 }
