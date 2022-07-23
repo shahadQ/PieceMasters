@@ -305,6 +305,7 @@ struct profile: View {
 
                 //5)Call us
                 VStack{
+                    NavigationLink(destination: CONTACTS()){
                     HStack {
                         
                         Label {
@@ -327,6 +328,7 @@ struct profile: View {
                                 .foregroundColor(.gray)
                         }
                         
+                    }
                     }
                     Divider()
                     
