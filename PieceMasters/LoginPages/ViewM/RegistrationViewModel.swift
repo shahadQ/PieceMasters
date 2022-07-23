@@ -62,6 +62,7 @@ final class  RegistrationViewModel : ObservableObject{
                     User.firstName:self.firstName,
                     User.lastName:self.lastName,
                     User.email:self.email
+                    
                 ]
                 
                 self.storeUserInformation(userData: userData)

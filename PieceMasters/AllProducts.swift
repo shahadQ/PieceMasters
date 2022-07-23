@@ -51,6 +51,7 @@ struct ProductView: View {
         self._categoryIndexzx = State(initialValue: categoryIndexzx)
         Productviewmodel.getData()
     }
+    
     var body: some View {
       
         ZStack {
@@ -313,7 +314,7 @@ struct ProductView: View {
         }.padding()
         .padding(.top ,-10)
         
-        
+     
         
         
     }

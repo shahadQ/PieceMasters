@@ -245,37 +245,37 @@ struct profile: View {
                 .padding(EdgeInsets(top: 0, leading: 36, bottom: 10, trailing: 36))
 
                 //3)subscription
-                VStack{
+               // VStack{
                     
-                    HStack {
+                   // HStack {
 
-                        Label {
-                            Text("How to get a subscription")
-                        .foregroundColor(PrimaryColor)
-                        } icon: {
-                            Image(systemName: "person.crop.rectangle.stack")
-
-                                .foregroundColor(SecondaryColor)
-
-                        }
-                        .frame(width: 320, alignment: .bottomLeading)
+                      //  Label {
+//                            Text("How to get a subscription")
+//                        .foregroundColor(PrimaryColor)
+//                        } icon: {
+//                            Image(systemName: "person.crop.rectangle.stack")
+//
+//                                .foregroundColor(SecondaryColor)
+//
+//                        }
+//                        .frame(width: 320, alignment: .bottomLeading)
                         
-                        Button(action: {
-                        }) {
-                            Image(systemName: "chevron.forward")
-                                .font(.system(size: 16 ).bold())
-                                .font(.headline)
-                                .foregroundColor(.gray)
-                        }
-                        
-                    }
-                    //line
-                    Divider()
+//                        Button(action: {
+//                        }) {
+//                            Image(systemName: "chevron.forward")
+//                                .font(.system(size: 16 ).bold())
+//                                .font(.headline)
+//                                .foregroundColor(.gray)
+//                        }
+//
+//                    }
+//                    //line
+//                    Divider()
                     
-                }
-                .padding(EdgeInsets(top: 0, leading: 36, bottom: 10, trailing: 36))
-
-                //4)Terms and conditions
+//               // }
+//                .padding(EdgeInsets(top: 0, leading: 36, bottom: 10, trailing: 36))
+//
+//                //4)Terms and conditions
                 VStack{
                     HStack {
                         Label {
@@ -308,7 +308,7 @@ struct profile: View {
                     HStack {
                         
                         Label {
-                            Text("Call us ")
+                            Text("Contact us ")
                         .foregroundColor(PrimaryColor)
                         } icon: {
                             Image(systemName: "phone.arrow.up.right")
@@ -319,6 +319,7 @@ struct profile: View {
                         .frame(width: 320, alignment: .bottomLeading)
                         
                         Button(action: {
+                           
                         }) {
                             Image(systemName: "chevron.forward")
                                 .font(.system(size: 16 ).bold())
@@ -360,6 +361,11 @@ struct profile: View {
                     
                 }
                 .padding(EdgeInsets(top: 0, leading: 36, bottom: 10, trailing: 36))
+//                NavigationLink {
+//                    RegistrationView()
+//                        .navigationBarBackButtonHidden(true)
+//                }
+//            label:{
 
                 
                 
@@ -391,3 +397,4 @@ struct profile_Previews: PreviewProvider {
         profile()
     }
 }
+

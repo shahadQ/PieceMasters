@@ -153,7 +153,7 @@ struct LoginView: View {
         .fullScreenCover(isPresented: $viewModel.isAouthenticatting) {
             map()
         }
-        // }
+       
         
         
     }

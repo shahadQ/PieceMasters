@@ -57,6 +57,7 @@ final class AuthViewModel:ObservableObject{
         try? Auth.auth().signOut()
         self.isAouthenticatting.toggle()
         self.user=nil
+        self.showAlert("Sucessfuly sign out ")
     }
     func checkIfUserLoggedIn() {
         

@@ -19,6 +19,7 @@ struct ImageModel: Identifiable{
 }
 
 struct MainPackaging: View {
+    @EnvironmentObject var viewModel: AuthViewModel
     @State var IData = [
         ImageModel(title: "All Products", ImageName: "img1", ImageBrand: ""),
         
@@ -235,7 +236,11 @@ struct MainPackaging: View {
             
             .navigationBarBackButtonHidden(true)
         }
+        if viewModel.isLoading{
+            LoadingView()
+        }
     }
+   
     
     
     func index(title:String)->Int{

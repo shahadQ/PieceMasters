@@ -24,7 +24,7 @@ struct RegistrationView: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
                     .multilineTextAlignment(.leading)
-                    .padding(.top,-150)
+                   
                     .padding(.trailing,250)
             Group{
              
@@ -52,7 +52,7 @@ struct RegistrationView: View {
                 Divider()
         .padding(.horizontal)
                 HStack(spacing: 15){
-                    Image(systemName: "envelope.fill")
+                    Image(systemName: "envelope")
                         .resizable()
                         .frame(width: 19 ,height: 21)
                         .foregroundColor(Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
@@ -102,7 +102,9 @@ struct RegistrationView: View {
                     }
                 }
                 .padding()
+                
             }
+            .padding(.top,5)
                
                 
                 Button(action:{
@@ -149,7 +151,9 @@ struct RegistrationView: View {
 
 
                         Text("Sign in ")
+                        .foregroundColor(Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
                     }
+                .padding()
                     }
                 
             }
@@ -162,9 +166,8 @@ struct RegistrationView: View {
            Button("OK") { }
         }
         .fullScreenCover(isPresented: $viewModel.isAouthenticatting) {
-            paymentPage()
+            map()
         }
-     
         
       
      
