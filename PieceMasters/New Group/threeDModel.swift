@@ -420,7 +420,7 @@ struct threeDModel: View {
                                 .disabled(false)
                                 .frame(width: 160, height: 55, alignment: .center)
                                 .foregroundColor(.gray)
-                                .background(BACGR1)
+                                .background(Color(red: 0.85, green: 0.85, blue: 0.85))
                                 .cornerRadius(10)
                                 .position(x: 287, y: 590)
                             }
