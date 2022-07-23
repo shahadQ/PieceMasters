@@ -225,8 +225,8 @@
 				E39405FC286684D10036BF19 /* RegistrationView.swift */,
 				E39405FE2866870B0036BF19 /* appleButton.swift */,
 				02760D772861B21E00E2AF3E /* profile.swift */,
-				E3940604286688510036BF19 /* ViewM */,
 				E327D045288C19910042A1D0 /* CONTACTS.swift */,
+				E3940604286688510036BF19 /* ViewM */,
 			);
 			path = LoginPages;
 			sourceTree = "<group>";
@@ -493,7 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PieceMasters/Preview Content\"";
-				DEVELOPMENT_TEAM = 5JQU78DCG7;
+				DEVELOPMENT_TEAM = 2M5H3S45SC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PieceMasters/Info.plist;
@@ -526,7 +526,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PieceMasters/Preview Content\"";
-				DEVELOPMENT_TEAM = 5JQU78DCG7;
+				DEVELOPMENT_TEAM = 2M5H3S45SC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PieceMasters/Info.plist;

@@ -106,7 +106,7 @@ struct RegistrationView: View {
             }
             .padding(.top,5)
                
-                
+           
                 Button(action:{
                     registrationViewModel.createUser()
                 }) {
@@ -120,6 +120,7 @@ struct RegistrationView: View {
 
                         .cornerRadius(10.0)
                 }
+            
             
 //                HStack(spacing: 15){
 //                    Rectangle()

@@ -27,7 +27,7 @@ struct LoginView: View {
     
     var body: some View{
         
-        // NavigationView{
+      
         ZStack{
             //            backgroundRectangle()
             Image("JJ")
@@ -103,7 +103,7 @@ struct LoginView: View {
                 
                 ForgetPassView()
                 
-                
+                NavigationLink(destination: map()) {
                 Button(action:{
                     viewModel.logInUser(email: email, password: password)
                     
@@ -118,6 +118,7 @@ struct LoginView: View {
                     //
                     
                         .cornerRadius(10.0)
+                }
                 }
                 
                 
@@ -146,13 +147,15 @@ struct LoginView: View {
             }
             
         }
+        
+//        .fullScreenCover(isPresented: $viewModel.isAouthenticatting) {
+//            map()
+//        }
         .navigationBarHidden(true)
         .alert(viewModel.alertTitle, isPresented: $viewModel.showingAlert) {
             Button("OK", role: .cancel) { }
         }
-        .fullScreenCover(isPresented: $viewModel.isAouthenticatting) {
-            map()
-        }
+      
        
         
         

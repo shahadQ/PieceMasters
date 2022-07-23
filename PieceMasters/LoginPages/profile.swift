@@ -220,8 +220,14 @@ struct profile: View {
                     HStack {
 
                         Label {
-                            Text("Language")
+                            HStack{
+                            Text("Language ")
                         .foregroundColor(PrimaryColor)
+                                Text("( Soon )")
+                                    .font(.footnote)
+                                    .fontWeight(.light)
+                                    .foregroundColor(.gray)
+                            }
                         } icon: {
                             Image(systemName: "globe")
 
@@ -275,37 +281,10 @@ struct profile: View {
 //               // }
 //                .padding(EdgeInsets(top: 0, leading: 36, bottom: 10, trailing: 36))
 //
-//                //4)Terms and conditions
-                VStack{
-                    HStack {
-                        Label {
-                            Text("Terms and conditions")
-                        .foregroundColor(PrimaryColor)
-                        } icon: {
-                            Image(systemName: "doc.plaintext")
-
-                                .foregroundColor(SecondaryColor)
-
-                        }
-                        .frame(width: 320, alignment: .bottomLeading)
-                        
-                        Button(action: {
-                        }) {
-                            Image(systemName: "chevron.forward")
-                                .font(.system(size: 16 ).bold())
-                                .font(.headline)
-                                .foregroundColor(.gray)
-                        }
-                        
-                    }
-                    //line
-                    Divider()
-                }
-                .padding(EdgeInsets(top: 0, leading: 36, bottom: 10, trailing: 36))
-
                 //5)Call us
                 VStack{
-                    NavigationLink(destination: CONTACTS()){
+                    NavigationLink(destination: CONTACTS()) {
+                        
                     HStack {
                         
                         Label {
@@ -334,6 +313,35 @@ struct profile: View {
                     
                 }
                 .padding(EdgeInsets(top: 0, leading: 36, bottom: 10, trailing: 36))
+//                //4)Terms and conditions
+                VStack{
+                    HStack {
+                        Label {
+                            Text("Terms and conditions")
+                        .foregroundColor(PrimaryColor)
+                        } icon: {
+                            Image(systemName: "doc.plaintext")
+
+                                .foregroundColor(SecondaryColor)
+
+                        }
+                        .frame(width: 320, alignment: .bottomLeading)
+                        
+                        Button(action: {
+                        }) {
+                            Image(systemName: "chevron.forward")
+                                .font(.system(size: 16 ).bold())
+                                .font(.headline)
+                                .foregroundColor(.gray)
+                        }
+                        
+                    }
+                    //line
+                    Divider()
+                }
+                .padding(EdgeInsets(top: 0, leading: 36, bottom: 10, trailing: 36))
+
+           
                 // sign out
                 VStack{
                     HStack {
