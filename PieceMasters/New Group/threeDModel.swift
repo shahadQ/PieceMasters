@@ -353,11 +353,20 @@ struct threeDModel: View {
                                 VStack{
                                     Text("Upload design ")
                                         .foregroundColor(SecondaryColor)
+                                        .padding(.top, 3)
+                              
                                     Text(fileName)
+                           
                                         .frame(width: 60, height: 0)
                                         .foregroundColor(.blue)
                                         .font(.system(size: 9.9))
+                                        
+                                
                                 }
+                                
+                                
+                                
+                                
                                 Image(systemName: "square.and.arrow.up")
                                     .foregroundColor(SecondaryColor)
                                 
@@ -420,7 +429,7 @@ struct threeDModel: View {
                                 .disabled(false)
                                 .frame(width: 160, height: 55, alignment: .center)
                                 .foregroundColor(.gray)
-                                .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                                .background(BACGR1)
                                 .cornerRadius(10)
                                 .position(x: 287, y: 590)
                             }
@@ -605,6 +614,7 @@ extension UIImage {
         return roundedImage ?? UIImage()
     }
 }
+
 
 
 

@@ -123,10 +123,7 @@ struct MainPackaging: View {
                                 Text("Browse by categories")
                                 
                                 Spacer()
-                                NavigationLink(destination: AllProducts()){
-                              
-                                Text("see all")
-                                }
+
                                 
                             }
                             
@@ -207,7 +204,7 @@ struct MainPackaging: View {
                                                     .resizable()
                                                     .position(x: 40, y: 21 )
                                                 
-                                                Text("Add your brand")
+                                                Text("Soon")
                                                 
                                                     .fontWeight(.bold)
                                                     .font(.system(size: 7))
@@ -268,6 +265,7 @@ struct MainPackaging_Previews: PreviewProvider {
         MainPackaging()
     }
 }
+
 
 
 

@@ -16,6 +16,7 @@ struct ProductDetails: View {
     
     
     var Product:product
+    @State var shouldHide = false
     @State private var showAlert = false
     //private var numberOfimages = 2
    @State var names = 0
@@ -129,8 +130,10 @@ struct ProductDetails: View {
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
                             .foregroundColor(Color(red: 0.5098039215686274, green: 0.49411764705882355, blue: 0.49411764705882355))
-                          
+                       
                         HStack(spacing: 15){
+                            
+                            
                             Button(action: {
                                // self.didTap = true
                                 self.didTapToBuyaProduct.toggle()
@@ -158,14 +161,16 @@ struct ProductDetails: View {
                                         
                                         if didTapToBuyaProduct {
                                             didTapDesignPruduct = false
+                            
                                         }
                                     }
                                 
                             })
                           
-                            
+                            if( Product.title == "Cup"){
                             Button(action: {
                                 self.didTapDesignPruduct.toggle()
+                                self.shouldHide = true
                             }, label: {
                                 Text("Design your products")
                                     .fontWeight(self.didTapToBuyaProduct ?  .bold : .semibold)
@@ -184,16 +189,22 @@ struct ProductDetails: View {
                                     )
                                     .onTapGesture {
                                         didTapDesignPruduct.toggle()
+                                        self.shouldHide = true
                                         
                                         if didTapDesignPruduct {
                                             didTapToBuyaProduct = false
+                                            self.shouldHide = true
                                         }
                                     }
                                   
                             })
                            
                         }
+                        }
                         .padding(.bottom)
+                        
+                        
+                        
                         Divider()
                         Text("Quantities")
                             .font(.system(size: 16))
@@ -654,6 +665,7 @@ struct ProductDetails_Previews: PreviewProvider {
         ProductDetails(Product: product( id: "11", title: "cuup", Description: "Double wall paper cups are made from two-layer cardboard. These cups are perfect for using with cold or hot drinks.The double wall paper cups fit especially well for serving hot beverages. ", image: "Cup1", amount: "PAPER CUP",  price: 90, offer: 1, isSelected: false))
     }
 }
+
 
 
 
