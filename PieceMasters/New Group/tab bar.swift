@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct tab_bar: View {
-
+    var SecondaryColor: Color = (Color(red: 0.5019607843137255, green: 0.8, blue: 0.7411764705882353))
     
     var body: some View {
         VStack{
@@ -42,8 +42,32 @@ struct tab_bar: View {
 
                     NavigationView{
                         if ViewModel.shared.cartItems.isEmpty{
-                            
-                            Text("cart is empty")
+                            VStack{
+                                Image("Group 330324")
+                                    .resizable()
+                                      .frame(width: 300, height: 300)
+                               
+                                
+                            Text("Your cart is empty")
+                                    .foregroundColor(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+                                    .fontWeight(.bold)
+                                    .frame( height: 50)
+                                NavigationLink(destination: MainPackaging()
+                                               
+                                ) {    Text("Continue shopping ")
+                                    
+                                        .foregroundColor(.white)
+                                        .fontWeight(.bold)
+                                        .padding(.vertical)
+                                    //.padding(.horizontal, 100)
+                                        .frame(width: 328 , height: 63 )
+                                        .background(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+                                    
+                                        .cornerRadius(10.0)
+                                     
+                                }
+
+                            }
                         }
                         else{
                             Cart()

@@ -76,7 +76,7 @@ struct threeDModel: View {
         
         
         
-        NavigationView {
+       NavigationView {
             
             
             
@@ -389,7 +389,7 @@ struct threeDModel: View {
                         
                         
                         // THE FUNC CHECK IF ALL FILEDS IS SELECTED
-                        if selectedPicker == "" && selectedColor ==  Color(.systemBackground) && (image == nil && fileName == "") {
+                        if selectedPicker == "" || selectedColor ==  Color(.systemBackground) || (image == nil && fileName == "") {
                             
                             Button("Continue Order", action: {})
                             
@@ -404,21 +404,35 @@ struct threeDModel: View {
                         }
                         
                         else{
-                         
-                            Button("Continue Order", action: {
+                            NavigationLink(destination: Cart()
+                                           
+                            ) {    Text("Continue Order ")
                                 
-                                
-                            })
-                            
-                            .disabled(false)
-                            .frame(width: 160, height: 55)
-                            .background(PrimaryColor)
-                            .cornerRadius(10)
-                            .foregroundColor(.white)
-                            .font(Font.body.bold())
-                            .position(x: 287, y: 590)
-                            
-                            
+                                    .disabled(false)
+                                    .frame(width: 160, height: 55)
+                                    .background(PrimaryColor)
+                                    .cornerRadius(10)
+                                    .foregroundColor(.white)
+                                    .font(Font.body.bold())
+                                    .position(x: 287, y: 590)
+                                    
+                                 
+                            }
+//
+//                            Button("Continue Order", action: {
+//
+//
+//                            })
+//
+//                            .disabled(false)
+//                            .frame(width: 160, height: 55)
+//                            .background(PrimaryColor)
+//                            .cornerRadius(10)
+//                            .foregroundColor(.white)
+//                            .font(Font.body.bold())
+//                            .position(x: 287, y: 590)
+//
+//
                             
                             
                         }

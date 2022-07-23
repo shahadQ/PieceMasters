@@ -13,6 +13,7 @@ struct cart: Identifiable {
     let products : product
     var Quantity : Int
     //var TotalPrice: Double
+    
     var Cardboard : String
     var size : String
     var url : String
