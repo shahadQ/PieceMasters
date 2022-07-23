@@ -389,60 +389,94 @@ struct threeDModel: View {
                         
                         
                         // THE FUNC CHECK IF ALL FILEDS IS SELECTED
-                        if selectedPicker == "" || selectedColor ==  Color(.systemBackground) || (image == nil && fileName == "") {
-                            
-                            Button("Continue Order", action: {})
-                            
-                                .disabled(disabled)
-                                .padding(10.0)
-                                .disabled(false)
-                                .frame(width: 160, height: 55)
-                                .background(BACGR1)
-                                .cornerRadius(10)
-                                .foregroundColor(.gray)
-                                .position(x: 287, y: 590)
-                        }
+//                        if selectedPicker == "" ||  selectedColor ==  Color(.systemBackground) || image == nil && fileName == "" {
+//
+//                            Button("Continue Order", action: {})
+//
+//                                .disabled(disabled)
+//                                .padding(10.0)
+//                                .disabled(false)
+//                                .frame(width: 160, height: 55)
+//                                .background(BACGR1)
+//                                .cornerRadius(10)
+//                                .foregroundColor(.gray)
+//                                .position(x: 287, y: 590)
+//                        }
+//
+//                        else{
+//                            NavigationLink(destination: Cart()
+//
+//                            ) {    Text("Continue Order ")
+//
+//                                    .disabled(false)
+//                                    .frame(width: 160, height: 55)
+//                                    .background(PrimaryColor)
+//                                    .cornerRadius(10)
+//                                    .foregroundColor(.white)
+//                                    .font(Font.body.bold())
+//                                    .position(x: 287, y: 590)
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//                            }
+//
+//
+//
+//
+//
+//                        }
+                        
+                        if selectedPicker == "" && selectedColor ==  Color(.systemBackground)  || fileName == ""
+                            && image == nil
+                        
+                        {
+                        
+                        
+
+                        Button("Continue Order", action: {})
+                            .disabled(false)
+                            .padding()
+                            .padding(.horizontal)
+                            .background(BACGR1)
+                            .foregroundColor(.gray)
+                            .cornerRadius(10)
+                            .position(x: 287, y: 590)
+
+                       }
+                        
+                        
                         
                         else{
-                            NavigationLink(destination: Cart()
-                                           
-                            ) {    Text("Continue Order ")
+                            NavigationLink(destination: Cart()){
+                            Button("Continue Order", action: {
                                 
-                                    .disabled(false)
-                                    .frame(width: 160, height: 55)
-                                    .background(PrimaryColor)
-                                    .cornerRadius(10)
-                                    .foregroundColor(.white)
-                                    .font(Font.body.bold())
-                                    .position(x: 287, y: 590)
-                                    
-                                 
-                            }
-//
-//                            Button("Continue Order", action: {
-//
-//
-//                            })
-//
-//                            .disabled(false)
-//                            .frame(width: 160, height: 55)
-//                            .background(PrimaryColor)
-//                            .cornerRadius(10)
-//                            .foregroundColor(.white)
-//                            .font(Font.body.bold())
-//                            .position(x: 287, y: 590)
-//
-//
+                                
+                                
+                                
+                                //Productviewmodel.addToCart(item: <#T##cart#>)
+                                
+                                
+                            })
+                            .disabled(disabled)
+                            .padding()
+                            .padding(.horizontal)
+                            .background(Color(red: 0.22745098039215686, green: 0.25882352941176473, blue: 0.4627450980392157))
+                            .cornerRadius(10.0)
+                            .foregroundColor(Color.white)
+                            .position(x: 287, y: 590)
+                            
+                            
                             
                             
                         }
                         
-                        
-                        
-                        
-                        
-                        
-                        
+                    }
                         
                         
                     }.onChange(of: selectedColor, perform: { _ in

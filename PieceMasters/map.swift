@@ -32,7 +32,7 @@ struct map: View {
 
    var body: some View {
 
-//       NavigationView{
+       NavigationView{
 
       
 
@@ -230,7 +230,7 @@ HStack(spacing: -40) {
 
                .padding(.bottom , 90)
 
-//           }
+           }
 
            }.padding(.top , -15)
 
