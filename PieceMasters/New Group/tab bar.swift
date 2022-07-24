@@ -20,9 +20,9 @@ struct tab_bar: View {
 
                     NavigationView{
 
-//                  MainPackaging()
+                  MainPackaging()
 //                      AllProducts()
- threeDModel()
+// threeDModel()
                         
 
                     }

@@ -47,6 +47,7 @@
 		88F7765F285F1CDE00C1A5AF /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7765E285F1CDE00C1A5AF /* SearchBar.swift */; };
 		88F7766328605A4C00C1A5AF /* AllProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7766228605A4C00C1A5AF /* AllProducts.swift */; };
 		E327D046288C19910042A1D0 /* CONTACTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E327D045288C19910042A1D0 /* CONTACTS.swift */; };
+		E327D04B288CA9650042A1D0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E327D04A288CA9650042A1D0 /* MapKit.framework */; };
 		E39405FB286682DC0036BF19 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39405FA286682DC0036BF19 /* LoginView.swift */; };
 		E39405FD286684D10036BF19 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39405FC286684D10036BF19 /* RegistrationView.swift */; };
 		E39405FF2866870B0036BF19 /* appleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39405FE2866870B0036BF19 /* appleButton.swift */; };
@@ -94,6 +95,9 @@
 		88F7765E285F1CDE00C1A5AF /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		88F7766228605A4C00C1A5AF /* AllProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProducts.swift; sourceTree = "<group>"; };
 		E327D045288C19910042A1D0 /* CONTACTS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CONTACTS.swift; sourceTree = "<group>"; };
+		E327D047288C88C10042A1D0 /* BranditRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BranditRelease.entitlements; sourceTree = "<group>"; };
+		E327D048288CA9500042A1D0 /* Brandit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Brandit.entitlements; sourceTree = "<group>"; };
+		E327D04A288CA9650042A1D0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E39405FA286682DC0036BF19 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E39405FC286684D10036BF19 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		E39405FE2866870B0036BF19 /* appleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appleButton.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				1684074D2861CA280071FC5F /* iPaymentButton in Frameworks */,
 				77B17113284BD65B001F9CBC /* FirebaseFirestore in Frameworks */,
 				77B17115284BD65B001F9CBC /* FirebaseStorage in Frameworks */,
+				E327D04B288CA9650042A1D0 /* MapKit.framework in Frameworks */,
 				777B92A02868F7F2008AE921 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,10 +173,13 @@
 		77B170D52847452D001F9CBC = {
 			isa = PBXGroup;
 			children = (
+				E327D048288CA9500042A1D0 /* Brandit.entitlements */,
+				E327D047288C88C10042A1D0 /* BranditRelease.entitlements */,
 				02FBF0D9286B2D630079FB5E /* ww.swift */,
 				02FBF0D3286B21250079FB5E /* Splash.swift */,
 				77B170E02847452D001F9CBC /* PieceMasters */,
 				77B170DF2847452D001F9CBC /* Products */,
+				E327D049288CA9650042A1D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,6 +224,14 @@
 				77B170E82847452E001F9CBC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E327D049288CA9650042A1D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E327D04A288CA9650042A1D0 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E39405F928667F8D0036BF19 /* LoginPages */ = {
@@ -490,6 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Brandit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PieceMasters/Preview Content\"";
@@ -501,10 +518,10 @@
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Brand It needs to access your location . For reliable delivery ,\nBbrand It collects location data from the time you open the app. This\nimprovesour delivery services and more.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Brand It needs to access your location . For reliable delivery ,\nBbrand It collects location data from the time you open the app. This\nimprovesour delivery services and more.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = NO;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,6 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BranditRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PieceMasters/Preview Content\"";
@@ -534,10 +552,10 @@
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Brand It needs to access your location . For reliable delivery ,\nBbrand It collects location data from the time you open the app. This\nimprovesour delivery services and more.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Brand It needs to access your location . For reliable delivery ,\nBbrand It collects location data from the time you open the app. This\nimprovesour delivery services and more.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = NO;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
